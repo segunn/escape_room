@@ -13,232 +13,232 @@
   <body>
 
     <div class="container">
-    	<div class="row mt-2 mb-2">
-    		<div class="col-sm-12">
-    			<h1>Escape from Dampton Court</h1>
-    		</div>
-    	</div>
-    	<div class="row mt-2 mb-2">
-    		<div class="col-sm-12">
-		    	<div class="progress">
-				  <div class="progress-bar" role="progressbar" style="width: 20%"  aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-			</div>
-		</div>
-    	<div class="row mt-2 mb-2">
-	    	<div class="col-sm-12 col-md-6">
-	    		<div class="mx-auto" style="background-image:url('assets/images/desk-small.jpg');height:500px;max-width: 375px;">
-	   				<img onclick="showClue('book')" src="assets/images/book.png" style="height: 70px;margin-left: 100px;margin-top: 250px; cursor: grab;">
-	   				<img onclick="showClue('note')" src="assets/images/note.png" style="height: 60px;margin-left: 180px;margin-top: 90px; cursor: grab;">
-	   				<img onclick="showClue('cards')" src="assets/images/cards.png" style="height: 40px;margin-left: -260px;margin-top: -210px;transform: rotate(-38deg); cursor: grab;">
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h1>Escape from Dampton Court</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 20%"  aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12 col-md-6">
+                <div class="mx-auto" style="background-image:url('assets/images/desk-small.jpg');height:500px;max-width: 375px;">
+                    <img onclick="showClue('book')" src="assets/images/book.png" style="height: 70px;margin-left: 100px;margin-top: 250px; cursor: grab;">
+                    <img onclick="showClue('note')" src="assets/images/note.png" style="height: 60px;margin-left: 180px;margin-top: 90px; cursor: grab;">
+                    <img onclick="showClue('cards')" src="assets/images/cards.png" style="height: 40px;margin-left: -260px;margin-top: -210px;transform: rotate(-38deg); cursor: grab;">
 
-	   			</div>
-	    	</div>
-	    	<div class="col-sm-12 col-md-6">
-	    		<p>
-	    			You awaken in the familiar palace archives. You've passed many happy hours here, browsing the chronicles. Befuddled by sleep, you're not quite sure what century you're in... or why the door is locked... but you do know you have to escape in time to renew your library books. The race is on!
-	    		</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p>
+                    You awaken in the familiar palace archives. You've passed many happy hours here, browsing the chronicles. Befuddled by sleep, you're not quite sure what century you're in... or why the door is locked... but you do know you have to escape in time to renew your library books. The race is on!
+                </p>
 
-	    		<div class="row mt-2 mb-2">
+                <div class="row mt-2 mb-2">
 
-		    		<div id="note" style="display:none;" class="bg-light col-sm-12">
-		    			<p class="lead">A hastily scribbled note in pencil...</p>
-		    			<p class="mx-auto" style="text-transform: uppercase;"><em>
-		    				Ahh such enlivenments <br/>
-		    				Not for baffled oldies <br/>
-		    				mayhem and often mindless mishaps <br/>
-		    				At last I will stop
-		    			</em><p>
-		    		</div>
-		    		<div id="book"  style="display:none;" class="bg-light col-sm-12">
-		    			<p class="lead">The ancient family Bible, from the archives</p>
-		    			<p class="mx-auto"><em>You find some carefully inked notes on the inside cover</em></p>
-		    			<p class="mx-auto">
-			    			neh 2.6 (17)</br>
-			    			est 1.7 (8) </br>
-			    			num 29.23 (3)</br>
-			    			2kgs 5.6 (2)
-			    		</p>
-			    		<p class="mx-auto">
-		    				<a href="https://www.biblegateway.com/versions/New-International-Version-UK-NIVUK-Bible/#booklist" target="_blank">Contents Page</a>
-		    			</p>
-		    		</div>
+                    <div id="note" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">A hastily scribbled note in pencil...</p>
+                        <p class="mx-auto" style="text-transform: uppercase;"><em>
+                            Ahh such enlivenments <br/>
+                            Not for baffled oldies <br/>
+                            mayhem and often mindless mishaps <br/>
+                            At last I will stop
+                        </em><p>
+                    </div>
+                    <div id="book"  style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The ancient family Bible, from the archives</p>
+                        <p class="mx-auto"><em>You find some carefully inked notes on the inside cover</em></p>
+                        <p class="mx-auto">
+                            neh 2.6 (17)</br>
+                            est 1.7 (8) </br>
+                            num 29.23 (3)</br>
+                            2kgs 5.6 (2)
+                        </p>
+                        <p class="mx-auto">
+                            <a href="https://www.biblegateway.com/versions/New-International-Version-UK-NIVUK-Bible/#booklist" target="_blank">Contents Page</a>
+                        </p>
+                    </div>
 
-		    		<div id="cards"  style="display:none;" class="bg-light col-sm-12">
-		    			<p class="lead">A pack of playing cards</p>
-		    			<p class="mx-auto"><em>
-		    				You notice that some of the cards have an extra number written in the centre
-		    			</em></p>
-		    			<div class="row">
-		    				<div class="col-xs-12 col-sm-4 col-sm-offset-1">
-				    			<select class="form-control" onchange="showCardValue(this.options[this.selectedIndex].value, this.options[this.selectedIndex].text)">
-				    				<option value=""></option>
-				    				<option value="220">&spadesuit;A</option>
-				    				<option value="397">&spadesuit;2</option>
-				    				<option value="506">&spadesuit;3</option>
-				    				<option value="445">&spadesuit;4</option>
-				    				<option value="160">&spadesuit;5</option>
-				    				<option value="144">&spadesuit;6</option>
-				    				<option value="433">&spadesuit;7</option>
-				    				<option value="242">&spadesuit;8</option>
-				    				<option value="37">&spadesuit;9</option>
-				    				<option value="586">&spadesuit;10</option>
-				    				<option value="898">&spadesuit;J</option>
-				    				<option value="422">&spadesuit;Q</option>
-				    				<option value="257">&spadesuit;K</option>
-				    				<option value="14">&clubsuit;A</option>
-				    				<option value="705">&clubsuit;2</option>
-				    				<option value="880">&clubsuit;3</option>
-				    				<option value="41">&clubsuit;4</option>
-				    				<option value="522">&clubsuit;5</option>
-				    				<option value="761">&clubsuit;6</option>
-				    				<option value="520">&clubsuit;7</option>
-				    				<option value="483">&clubsuit;8</option>
-				    				<option value="380">&clubsuit;9</option>
-				    				<option value="278">&clubsuit;10</option>
-				    				<option value="420">&clubsuit;J</option>
-				    				<option value="744">&clubsuit;Q</option>
-				    				<option value="798">&clubsuit;K</option>
-				    				<option value="778">&heartsuit;A</option>
-				    				<option value="471">&heartsuit;2</option>
-				    				<option value="669">&heartsuit;3</option>
-				    				<option value="394">&heartsuit;4</option>
-				    				<option value="846">&heartsuit;5</option>
-				    				<option value="591">&heartsuit;6</option>
-				    				<option value="7">&heartsuit;7</option>
-				    				<option value="987">&heartsuit;8</option>
-				    				<option value="791">&heartsuit;9</option>
-				    				<option value="85">&heartsuit;10</option>
-				    				<option value="470">&heartsuit;J</option>
-				    				<option value="690">&heartsuit;Q</option>
-				    				<option value="834">&heartsuit;K</option>
-				    				<option value="511">&diamondsuit;A</option>
-				    				<option value="399">&diamondsuit;2</option>
-				    				<option value="482">&diamondsuit;3</option>
-				    				<option value="987">&diamondsuit;4</option>
-				    				<option value="533">&diamondsuit;5</option>
-				    				<option value="877">&diamondsuit;6</option>
-				    				<option value="359">&diamondsuit;7</option>
-				    				<option value="916">&diamondsuit;8</option>
-				    				<option value="765">&diamondsuit;9</option>
-				    				<option value="744">&diamondsuit;10</option>
-				    				<option value="136">&diamondsuit;J</option>
-				    				<option value="797">&diamondsuit;Q</option>
-				    				<option value="626">&diamondsuit;K</option>
-				    			</select>
-				    		</div>
-		    				<div class="col-xs-12 col-sm-4 col-sm-offset-1">
-		    					<div class="alert alert-warning pl-3 pr-3 pt-5 pb-3" role="alert" id="the_card" style="display:none;">
-								  <div class="cardtext mt-n5"></div>
-								  <div id="cardvalue" class="ml-5 mt-5"></div>
-								  <div class="cardtext" style="margin-left: 7rem; margin-top: 4rem; transform: rotate(180deg)"></div>
-								</div>
-							</div>				    		
-				    	</div>
-				    </div>
-		    	</div>
+                    <div id="cards"  style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">A pack of playing cards</p>
+                        <p class="mx-auto"><em>
+                            You notice that some of the cards have an extra number written in the centre
+                        </em></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+                                <select class="form-control" onchange="showCardValue(this.options[this.selectedIndex].value, this.options[this.selectedIndex].text)">
+                                    <option value=""></option>
+                                    <option value="220">&spadesuit;A</option>
+                                    <option value="397">&spadesuit;2</option>
+                                    <option value="506">&spadesuit;3</option>
+                                    <option value="445">&spadesuit;4</option>
+                                    <option value="160">&spadesuit;5</option>
+                                    <option value="144">&spadesuit;6</option>
+                                    <option value="433">&spadesuit;7</option>
+                                    <option value="242">&spadesuit;8</option>
+                                    <option value="37">&spadesuit;9</option>
+                                    <option value="586">&spadesuit;10</option>
+                                    <option value="898">&spadesuit;J</option>
+                                    <option value="422">&spadesuit;Q</option>
+                                    <option value="257">&spadesuit;K</option>
+                                    <option value="14">&clubsuit;A</option>
+                                    <option value="705">&clubsuit;2</option>
+                                    <option value="880">&clubsuit;3</option>
+                                    <option value="41">&clubsuit;4</option>
+                                    <option value="522">&clubsuit;5</option>
+                                    <option value="761">&clubsuit;6</option>
+                                    <option value="520">&clubsuit;7</option>
+                                    <option value="483">&clubsuit;8</option>
+                                    <option value="380">&clubsuit;9</option>
+                                    <option value="278">&clubsuit;10</option>
+                                    <option value="420">&clubsuit;J</option>
+                                    <option value="744">&clubsuit;Q</option>
+                                    <option value="798">&clubsuit;K</option>
+                                    <option value="778">&heartsuit;A</option>
+                                    <option value="471">&heartsuit;2</option>
+                                    <option value="669">&heartsuit;3</option>
+                                    <option value="394">&heartsuit;4</option>
+                                    <option value="846">&heartsuit;5</option>
+                                    <option value="591">&heartsuit;6</option>
+                                    <option value="7">&heartsuit;7</option>
+                                    <option value="987">&heartsuit;8</option>
+                                    <option value="791">&heartsuit;9</option>
+                                    <option value="85">&heartsuit;10</option>
+                                    <option value="470">&heartsuit;J</option>
+                                    <option value="690">&heartsuit;Q</option>
+                                    <option value="834">&heartsuit;K</option>
+                                    <option value="511">&diamondsuit;A</option>
+                                    <option value="399">&diamondsuit;2</option>
+                                    <option value="482">&diamondsuit;3</option>
+                                    <option value="987">&diamondsuit;4</option>
+                                    <option value="533">&diamondsuit;5</option>
+                                    <option value="877">&diamondsuit;6</option>
+                                    <option value="359">&diamondsuit;7</option>
+                                    <option value="916">&diamondsuit;8</option>
+                                    <option value="765">&diamondsuit;9</option>
+                                    <option value="744">&diamondsuit;10</option>
+                                    <option value="136">&diamondsuit;J</option>
+                                    <option value="797">&diamondsuit;Q</option>
+                                    <option value="626">&diamondsuit;K</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+                                <div class="alert alert-warning pl-3 pr-3 pt-5 pb-3" role="alert" id="the_card" style="display:none;">
+                                  <div class="cardtext mt-n5"></div>
+                                  <div id="cardvalue" class="ml-5 mt-5"></div>
+                                  <div class="cardtext" style="margin-left: 7rem; margin-top: 4rem; transform: rotate(180deg)"></div>
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
 
-		    	<div class="row mt-2 mb-2">
-		    		<div class="col-sm-12">
-			    		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#doorModal">
-						  Try the door
-						</button>
-		    		</div>
-		    	</div>
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#doorModal">
+                          Try the door
+                        </button>
+                    </div>
+                </div>
 
-	    	</div>
-	    </div>
+            </div>
+        </div>
 
     </div>
 
-	<div class="modal fade" id="doorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Try the door</h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body">
-	        <p>
-	        	The door is locked with a hefty combination lock.
-	        </p>
-	        <div class="row">
-	        	<div id="digit1" class="ml-3">
-	        		<select class="form-control">
-	    				<option value="0">0</option>
-	    				<option value="1">1</option>
-	    				<option value="2">2</option>
-	    				<option value="3">3</option>
-	    				<option value="4">4</option>
-	    				<option value="5">5</option>
-	    				<option value="6">6</option>
-	    				<option value="7">7</option>
-	    				<option value="8">8</option>
-	    				<option value="9">9</option>
-	    			</select>
-	        	</div>
-				<div class="col-xs-3" id="digit2">
-	        		<select class="form-control">
-	    				<option value="0">0</option>
-	    				<option value="1">1</option>
-	    				<option value="2">2</option>
-	    				<option value="3">3</option>
-	    				<option value="4">4</option>
-	    				<option value="5">5</option>
-	    				<option value="6">6</option>
-	    				<option value="7">7</option>
-	    				<option value="8">8</option>
-	    				<option value="9">9</option>
-	    			</select>
-	        	</div>	  
-				<div class="col-xs-3" id="digit3">
-	        		<select class="form-control">
-	    				<option value="0">0</option>
-	    				<option value="1">1</option>
-	    				<option value="2">2</option>
-	    				<option value="3">3</option>
-	    				<option value="4">4</option>
-	    				<option value="5">5</option>
-	    				<option value="6">6</option>
-	    				<option value="7">7</option>
-	    				<option value="8">8</option>
-	    				<option value="9">9</option>
-	    			</select>
-	        	</div>	        	      	
-	        </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-primary" onclick="openDoor()">Open Door</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+    <div class="modal fade" id="doorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Try the door</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                The door is locked with a hefty combination lock.
+            </p>
+            <div class="row">
+                <div id="digit1" class="ml-3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="col-xs-3" id="digit2">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>    
+                <div class="col-xs-3" id="digit3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>                      
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="openDoor()">Open Door</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<script>
-		function showClue(id){
-			$('#note').hide()
-			$('#book').hide()
-			$('#cards').hide()
-			$('#'+ id).show()
-		}
+    <script>
+        function showClue(id){
+            $('#note').hide()
+            $('#book').hide()
+            $('#cards').hide()
+            $('#'+ id).show()
+        }
 
-		function showCardValue(chosen, text){
-			$('#the_card').show()
-			$('#cardvalue').text(chosen)
-			$('.cardtext').text(text)
-		}
+        function showCardValue(chosen, text){
+            $('#the_card').show()
+            $('#cardvalue').text(chosen)
+            $('.cardtext').text(text)
+        }
 
-		function openDoor(){
-			if ( $('#digit1 select').val() == "3" && $('#digit2 select').val() == "5" && $("#digit3 select").val() == "9" ) {
-				window.location = "bar.html"
-			} else {
-				alert("The door is still locked...")
-			}
-		}
+        function openDoor(){
+            if ( $('#digit1 select').val() == "3" && $('#digit2 select').val() == "5" && $("#digit3 select").val() == "9" ) {
+                window.location = "bar.html"
+            } else {
+                alert("The door is still locked...")
+            }
+        }
 
-	</script>
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
