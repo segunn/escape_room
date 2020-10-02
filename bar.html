@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Escape from Dampton Court</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h1>Escape from Dampton Court</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 40%"  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12 col-md-6">
+                <div class="mx-auto" style="background-image:url('assets/images/bar.jpg');height:500px;max-width: 319px;">
+                    <img onclick="showClue('postcard')" src="assets/images/postcard.png" style="height: 33px;margin-left: 75px;margin-top: -3px; cursor: grab;">
+                    <img onclick="showClue('todo_list')" src="assets/images/todo_list.png" style="height: 80px;margin-left: 190px;margin-top: 70px; cursor: grab;">
+                    <img onclick="showClue('newspaper')" src="assets/images/newspaper.png" style="height: 70px;margin-left: 90px;margin-top: -50px; cursor: grab;">
+                    <img onclick="showClue('jukebox')" src="assets/images/jukebox2.png" style="height: 230px;margin-left: -175px;cursor: grab;">
+                    <img onclick="showClue('alphabet')" src="assets/images/bar_runner.png" style="height: 60px;margin-left: 300px;margin-top: -170px; cursor: grab;">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p>
+                   You emerge and find yourself in a silent, empty bar. The barman is nowhere to be seen, the jukebox is silent and an abandoned newspaper lies open at the puzzles page. The exit door is locked.
+
+                </p>
+
+                <div class="row mt-2 mb-2">
+
+                    <div id="newspaper" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The newspaper is open at the puzzles page</p>
+                        <p class="mx-auto text-center" style="text-transform: uppercase;"><em>Merely Link</em><p>
+                        <table class="table table-bordered text-center">
+                        <tbody>
+                            <tr>
+                                <td>Rover</td>
+                                <td>Alnwick</td>
+                                <td>Charlie</td>
+                                <td>Yes, m'lady</td>
+                            </tr>
+                            <tr>
+                                <td>Pens</td>
+                                <td>God of War</td>
+                                <td>Bars</td>
+                                <td>Dunstanburgh</td>
+                            </tr>
+                            <tr>
+                                <td>Bamburgh</td>
+                                <td>Lovell</td>
+                                <td>Warkworth</td>
+                                <td>Windsor</td>
+                            </tr>
+                            <tr>
+                                <td>Brandon</td>
+                                <td>Nosey</td>
+                                <td>Southwell</td>
+                                <td>Planets</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <div id="alphabet" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/alphabet.png">
+                    </div>
+
+                    <div id="postcard"  style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">A postcard on the mantelpiece</p>
+                        <div class="row alert alert-info pl-3 pr-3 pt-5 pb-3">
+                            <div class="col-xs-12 col-sm-6">
+                              <div class="mt-1"><em>We're having a great holiday in Northumberland. We went to four castles yesterday: Alnwick, Bamburgh, Dunstanburgh and Warkworth! Wish you were here...</em></div>
+                              <div class="mt-1"><em>xxx</em></div>
+                            </div>
+                            <div class="col-sm-6 text-center">
+                                Joe Bloggs</br>
+                                Dampton Court</br>
+                                UK
+                            </div>
+                        </div> 
+                    </div>
+                    <div id="jukebox" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The jukebox stands silent</p>
+                        <p class="mx-auto">
+                            <b>Track Listing</b><br/>
+                            178 A Night in Tunisia – Dizzy Gillespie  <br/>
+                            343 Bat out of Hell – Meat loaf <br/>
+                            404 Brown Eyed Girl – Van Morrison <br/>
+                            472 Bohemian Rhapsody – Queen  <br/>
+                            533 Good Vibrations – The Beach Boys <br/>
+                            621 Pass Out – Tinie Tempah <br/>
+                            740 Poisoning Pigeons in the Park – Tom Lehrer <br/>
+                            801 Uprising – Muse <br/>
+                            937 Yellow Submarine – The Beatles <br/>
+                        </p>
+                    </div>
+                    <div id="todo_list" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">Framed on the wall, an excerpt from Henry VII's notebook</p>
+                        <p>To Do List...</p>
+                        <ul>
+                            <li>Appoint Robert Southwell as chief auditor</li>
+                            <li>Ask Andrew Windsor where my favourite socks have gone</li>
+                            <li>Tell Thomas Brandon to find me a faster horse</li>
+                            <li>Ask Lovell for some more pocket money</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#doorModal">
+                          Try the door
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="doorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Try the door</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                The door won't open without the right combination.
+            </p>
+            <div class="row">
+                <div id="digit1" class="ml-3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="col-xs-3" id="digit2">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>    
+                <div class="col-xs-3" id="digit3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>                      
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="openDoor()">Open Door</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function showClue(id){
+            $('#postcard').hide()
+            $('#jukebox').hide()
+            $('#alphabet').hide()
+            $('#newspaper').hide()
+            $('#todo_list').hide()
+            $('#'+ id).show()
+        }
+
+
+        function openDoor(){
+            if ( $('#digit1 select').val() == "8" && $('#digit2 select').val() == "0" && $("#digit3 select").val() == "1" ) {
+                window.location = "gallery.html"
+            } else {
+                alert("The door is still locked...")
+            }
+        }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
