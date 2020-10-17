@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Escape from Dampton Court</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h1>Escape from Dampton Court</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 60%"  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12 col-md-6">
+                <div class="mx-auto" style="background-image:url('assets/images/gallery-small.jpg');height:500px;max-width: 319px;">
+                    <img onclick="showClue('plinth')" src="assets/images/plinth.png" style="height: 60px;margin-top: 270px; cursor: grab;">
+                    <!-- <img onclick="showClue('todo_list')" src="assets/images/todo_list.png" style="height: 80px;margin-left: 190px;margin-top: 70px; cursor: grab;"> -->
+                    <!-- <img onclick="showClue('newspaper')" src="assets/images/newspaper.png" style="height: 70px;margin-left: 90px;margin-top: -50px; cursor: grab;"> -->
+                    <!-- <img onclick="showClue('jukebox')" src="assets/images/jukebox2.png" style="height: 230px;margin-left: -175px;cursor: grab;"> -->
+                    <!-- <img onclick="showClue('alphabet')" src="assets/images/bar_runner.png" style="height: 60px;margin-left: 300px;margin-top: -170px; cursor: grab;"> -->
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p>
+                   You step from the gloomy archives into an equally gloomy gallery. The ceiling has elaborately painted panels of dubious quality. On a plinth at the far end appears to be an antique sundial. The door at the end is padlocked shut.
+                </p>
+
+                <div class="row mt-2 mb-2">
+
+                    <div id="plinth" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The newspaper is open at the puzzles page</p>
+                        <p class="mx-auto text-center" style="text-transform: uppercase;"><em>Merely Link</em><p>
+                        
+                        </table>
+                    </div>
+                    <div id="art1" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/art1.png">
+                    </div>
+                    <div id="art2" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/art2.png">
+                    </div>
+                    <div id="art3" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/art3.png">
+                    </div>
+                    <div id="art4" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/art4.png">
+                    </div>                    
+                    <div id="art5" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The bar mat has an unusual design</p>
+                       <img class="img-fluid" src="assets/images/art5.png">
+                    </div>
+                </div>
+
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#doorModal">
+                          Try the door
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="doorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Try the door</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                The door won't open without the right combination.
+            </p>
+            <div class="row">
+                <div id="digit1" class="ml-3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="col-xs-3" id="digit2">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>    
+                <div class="col-xs-3" id="digit3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>                      
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="openDoor()">Open Door</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function showClue(id){
+            $('#plinth').hide()
+            $('#art1').hide()
+            $('#art2').hide()
+            $('#art3').hide()
+            $('#art4').hide()
+            $('#art5').hide()
+            $('#'+ id).show()
+        }
+
+
+        function openDoor(){
+            if ( $('#digit1 select').val() == "8" && $('#digit2 select').val() == "0" && $("#digit3 select").val() == "1" ) {
+                window.location = "gallery.html"
+            } else {
+                alert("The door is still locked...")
+            }
+        }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
