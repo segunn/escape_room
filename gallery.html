@@ -29,43 +29,68 @@
             <div class="col-sm-12 col-md-6">
                 <div class="mx-auto" style="background-image:url('assets/images/gallery-small.jpg');height:500px;max-width: 319px;">
                     <img onclick="showClue('plinth')" src="assets/images/plinth.png" style="height: 60px;margin-top: 270px; cursor: grab;">
-                    <!-- <img onclick="showClue('todo_list')" src="assets/images/todo_list.png" style="height: 80px;margin-left: 190px;margin-top: 70px; cursor: grab;"> -->
-                    <!-- <img onclick="showClue('newspaper')" src="assets/images/newspaper.png" style="height: 70px;margin-left: 90px;margin-top: -50px; cursor: grab;"> -->
-                    <!-- <img onclick="showClue('jukebox')" src="assets/images/jukebox2.png" style="height: 230px;margin-left: -175px;cursor: grab;"> -->
-                    <!-- <img onclick="showClue('alphabet')" src="assets/images/bar_runner.png" style="height: 60px;margin-left: 300px;margin-top: -170px; cursor: grab;"> -->
+                    <img onclick="showClue('art1')" src="assets/images/ceiling1.png" style="margin-left: -35px;margin-top: -220px; cursor: grab;">
+                    <img onclick="showClue('art2')" src="assets/images/ceiling2.png" style="margin-left: -72px;margin-top: -80px; cursor: grab;">
+                    <img onclick="showClue('art3')" src="assets/images/ceiling3.png" style="margin-left: -41px;margin-top: 15px; cursor: grab;">
+                    
+                    <img onclick="showClue('art4')" src="assets/images/ceiling4.png" style="margin-left: 45px;margin-top: -110px; cursor: grab;">
+                    <img onclick="showClue('art5')" src="assets/images/ceiling5.png" style="margin-left: 40px;margin-top: -362px; cursor: grab;">
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <p>
-                   You step from the gloomy archives into an equally gloomy gallery. The ceiling has elaborately painted panels of dubious quality. On a plinth at the far end appears to be an antique sundial. The door at the end is padlocked shut.
+                   You step from the gloomy archives into an equally gloomy gallery. The ceiling has elaborately painted panels of dubious quality. On a plinth at the far end is a damaged antique sundial. The door is padlocked shut.
                 </p>
 
                 <div class="row mt-2 mb-2">
 
                     <div id="plinth" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The newspaper is open at the puzzles page</p>
-                        <p class="mx-auto text-center" style="text-transform: uppercase;"><em>Merely Link</em><p>
+                        <p class="lead">The disc on top of the sundial is loose and can turn.</p>
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <img class="img-fluid" src="assets/images/arrow.svg" onclick="spinTheSundial()"  style="cursor: pointer;" id="sundial-arrow" data-sundial-position="1">
+                            </div>
+                        </div>
+                        <img class="img-fluid" id="sundial_1" data-next-position="5" src="assets/images/sundial_1.png">
+                        <img class="img-fluid" id="sundial_2" data-next-position="18" src="assets/images/sundial_2.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_3" data-next-position="19" src="assets/images/sundial_3.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_4" data-next-position="16" src="assets/images/sundial_4.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_5" data-next-position="11" src="assets/images/sundial_5.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_6" data-next-position="12" src="assets/images/sundial_6.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_7" data-next-position="3" src="assets/images/sundial_7.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_8" data-next-position="4" src="assets/images/sundial_8.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_9" data-next-position="17" src="assets/images/sundial_9.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_10" data-next-position="6" src="assets/images/sundial_10.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_11" data-next-position="15" src="assets/images/sundial_11.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_12" data-next-position="20" src="assets/images/sundial_12.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_13" data-next-position="10" src="assets/images/sundial_13.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_14" data-next-position="1" src="assets/images/sundial_14.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_15" data-next-position="7" src="assets/images/sundial_15.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_16" data-next-position="2" src="assets/images/sundial_16.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_17" data-next-position="13" src="assets/images/sundial_17.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_18" data-next-position="14" src="assets/images/sundial_18.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_19" data-next-position="9" src="assets/images/sundial_19.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_20" data-next-position="8" src="assets/images/sundial_20.png" style="display:none;">
                         
-                        </table>
                     </div>
                     <div id="art1" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The bar mat has an unusual design</p>
+                        <p class="lead">The ceiling panel has a striking design.</p>
                        <img class="img-fluid" src="assets/images/art1.png">
                     </div>
                     <div id="art2" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The bar mat has an unusual design</p>
+                        <p class="lead">The ceiling panel's design is striking.</p>
                        <img class="img-fluid" src="assets/images/art2.png">
                     </div>
                     <div id="art3" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The bar mat has an unusual design</p>
+                        <p class="lead">The design of the ceiling panel is striking.</p>
                        <img class="img-fluid" src="assets/images/art3.png">
                     </div>
                     <div id="art4" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The bar mat has an unusual design</p>
+                        <p class="lead">The ceiling panel is strikingly designed.</p>
                        <img class="img-fluid" src="assets/images/art4.png">
                     </div>                    
                     <div id="art5" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The bar mat has an unusual design</p>
+                        <p class="lead">The panel on the ceiling has a striking design.</p>
                        <img class="img-fluid" src="assets/images/art5.png">
                     </div>
                 </div>
@@ -161,11 +186,19 @@
 
 
         function openDoor(){
-            if ( $('#digit1 select').val() == "8" && $('#digit2 select').val() == "0" && $("#digit3 select").val() == "1" ) {
-                window.location = "gallery.html"
+            if ( $('#digit1 select').val() == "6" && $('#digit2 select').val() == "7" && $("#digit3 select").val() == "0" ) {
+                window.location = "tea.html"
             } else {
                 alert("The door is still locked...")
             }
+        }
+
+        function spinTheSundial(){
+            var current_time = $('#sundial-arrow').data("sundial-position");
+            var next_time = $('#sundial_' + current_time).data("next-position");
+            $('#sundial-arrow').data("sundial-position", next_time);
+            $('#sundial_' + current_time).hide()
+            $('#sundial_' + next_time).show()
         }
 
     </script>
