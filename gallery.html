@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Escape from Dampton Court</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h1>Escape from Dampton Court</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 60%"  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12 col-md-6">
+                <div class="mx-auto" style="background-image:url('assets/images/gallery-small.jpg');height:500px;max-width: 319px;">
+                    <img onclick="showClue('plinth')" src="assets/images/plinth.png" style="height: 60px;margin-top: 270px; cursor: grab;">
+                    <img onclick="showClue('art1')" src="assets/images/ceiling1.png" style="margin-left: -35px;margin-top: -220px; cursor: grab;">
+                    <img onclick="showClue('art2')" src="assets/images/ceiling2.png" style="margin-left: -72px;margin-top: -80px; cursor: grab;">
+                    <img onclick="showClue('art3')" src="assets/images/ceiling3.png" style="margin-left: -41px;margin-top: 15px; cursor: grab;">
+                    
+                    <img onclick="showClue('art4')" src="assets/images/ceiling4.png" style="margin-left: 45px;margin-top: -110px; cursor: grab;">
+                    <img onclick="showClue('art5')" src="assets/images/ceiling5.png" style="margin-left: 40px;margin-top: -362px; cursor: grab;">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p>
+                   You step from the gloomy archives into an equally gloomy gallery. The ceiling has elaborately painted panels of dubious quality. On a plinth at the far end is a damaged antique sundial. The door is padlocked shut.
+                </p>
+
+                <div class="row mt-2 mb-2">
+
+                    <div id="plinth" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The disc on top of the sundial is loose and can turn.</p>
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <img class="img-fluid" src="assets/images/arrow.svg" onclick="spinTheSundial()"  style="cursor: pointer;" id="sundial-arrow" data-sundial-position="1">
+                            </div>
+                        </div>
+                        <img class="img-fluid" id="sundial_1" data-next-position="5" src="assets/images/sundial_1.png">
+                        <img class="img-fluid" id="sundial_2" data-next-position="18" src="assets/images/sundial_2.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_3" data-next-position="19" src="assets/images/sundial_3.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_4" data-next-position="16" src="assets/images/sundial_4.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_5" data-next-position="11" src="assets/images/sundial_5.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_6" data-next-position="12" src="assets/images/sundial_6.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_7" data-next-position="3" src="assets/images/sundial_7.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_8" data-next-position="4" src="assets/images/sundial_8.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_9" data-next-position="17" src="assets/images/sundial_9.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_10" data-next-position="6" src="assets/images/sundial_10.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_11" data-next-position="15" src="assets/images/sundial_11.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_12" data-next-position="20" src="assets/images/sundial_12.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_13" data-next-position="10" src="assets/images/sundial_13.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_14" data-next-position="1" src="assets/images/sundial_14.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_15" data-next-position="7" src="assets/images/sundial_15.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_16" data-next-position="2" src="assets/images/sundial_16.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_17" data-next-position="13" src="assets/images/sundial_17.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_18" data-next-position="14" src="assets/images/sundial_18.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_19" data-next-position="9" src="assets/images/sundial_19.png" style="display:none;">
+                        <img class="img-fluid" id="sundial_20" data-next-position="8" src="assets/images/sundial_20.png" style="display:none;">
+                        
+                    </div>
+                    <div id="art1" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The ceiling panel has a striking design.</p>
+                       <img class="img-fluid" src="assets/images/art1.png">
+                    </div>
+                    <div id="art2" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The ceiling panel's design is striking.</p>
+                       <img class="img-fluid" src="assets/images/art2.png">
+                    </div>
+                    <div id="art3" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The design of the ceiling panel is striking.</p>
+                       <img class="img-fluid" src="assets/images/art3.png">
+                    </div>
+                    <div id="art4" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The ceiling panel is strikingly designed.</p>
+                       <img class="img-fluid" src="assets/images/art4.png">
+                    </div>                    
+                    <div id="art5" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The panel on the ceiling has a striking design.</p>
+                       <img class="img-fluid" src="assets/images/art5.png">
+                    </div>
+                </div>
+
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#doorModal">
+                          Try the door
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="doorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Try the door</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                The door won't open without the right combination.
+            </p>
+            <div class="row">
+                <div id="digit1" class="ml-3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="col-xs-3" id="digit2">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>    
+                <div class="col-xs-3" id="digit3">
+                    <select class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>                      
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="openDoor()">Open Door</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function showClue(id){
+            $('#plinth').hide()
+            $('#art1').hide()
+            $('#art2').hide()
+            $('#art3').hide()
+            $('#art4').hide()
+            $('#art5').hide()
+            $('#'+ id).show()
+        }
+
+
+        function openDoor(){
+            if ( $('#digit1 select').val() == "6" && $('#digit2 select').val() == "7" && $("#digit3 select").val() == "0" ) {
+                window.location = "tea.html"
+            } else {
+                alert("The door is still locked...")
+            }
+        }
+
+        function spinTheSundial(){
+            var current_time = $('#sundial-arrow').data("sundial-position");
+            var next_time = $('#sundial_' + current_time).data("next-position");
+            $('#sundial-arrow').data("sundial-position", next_time);
+            $('#sundial_' + current_time).hide()
+            $('#sundial_' + next_time).show()
+        }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
