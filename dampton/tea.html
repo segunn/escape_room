@@ -27,48 +27,114 @@
         </div>
         <div class="row mt-2 mb-2">
             <div class="col-sm-12 col-md-6">
-                <!-- <div class="mx-auto" style="background-image:url('assets/images/gallery-small.jpg');height:500px;max-width: 319px;">
-                    <img onclick="showClue('plinth')" src="assets/images/plinth.png" style="height: 60px;margin-top: 270px; cursor: grab;">
-                    <img onclick="showClue('art1')" src="assets/images/ceiling1.png" style="margin-left: -35px;margin-top: -220px; cursor: grab;">
-                    <img onclick="showClue('art2')" src="assets/images/ceiling2.png" style="margin-left: -72px;margin-top: -80px; cursor: grab;">
-                    <img onclick="showClue('art3')" src="assets/images/ceiling3.png" style="margin-left: -41px;margin-top: 15px; cursor: grab;">
-                    
-                    <img onclick="showClue('art4')" src="assets/images/ceiling4.png" style="margin-left: 45px;margin-top: -110px; cursor: grab;">
-                    <img onclick="showClue('art5')" src="assets/images/ceiling5.png" style="margin-left: 40px;margin-top: -362px; cursor: grab;">
-                </div> -->
+                <div class="mx-auto" style="background-image:url('assets/images/tea-small.jpg');height:500px;max-width: 319px;">
+                    <img onclick="showClue('tables')" src="assets/images/teapot.png" style="margin-top: 280px; margin-left: 249px; cursor: grab;">
+                    <img onclick="showClue('books')" src="assets/images/books.png" style="margin-top: 20px; cursor: grab;">
+                    <img onclick="showClue('cabinet')" src="assets/images/cabinet_door.png" style="margin-left: 81px;margin-top: -320px; cursor: grab;">
+                </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <p>
-                    Looking around, this is clearly the location for the famous Dampton Court all-you-can-eat afternoon tea. These tables must have been carved by a master craftsman, but their recent maintenance has been… innovative. Held together by Blu Tack and Polyfilla, it looks like they might collapse if too much weight is placed on any of them. The cake stands have spaces for baked goods, but they’re empty.
+                    Looking around, this is clearly the location for the famous Dampton Court all-you-can-eat afternoon tea. 
 
                 </p>
 
                 <div class="row mt-2 mb-2">
 
-                   <!--  <div id="plinth" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The disc on top of the sundial is loose and can turn.</p>
-                        
+                    <div id="tables" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">Three small tables must have been carved by a master craftsman, but their recent maintenance has been… innovative. Held together by Blu Tack and Polyfilla, it looks like they might collapse if too much weight is placed on any of them. The cake stands have spaces for baked goods, but they’re empty.</p>
+                       <img class="img-fluid" src="assets/images/tables.png">
                     </div>
-                    <div id="art1" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The ceiling panel has a striking design.</p>
-                       <img class="img-fluid" src="assets/images/art1.png">
+                    <div id="books" style="display:none;" class="bg-light col-sm-12"> 
+                        <p class="lead">The coffee table is well supplied with light reading materials.</p>
+                        <ul>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('book1')">Look inside</button>  Poetry of Cardinal Wolsey: The Complete Collection</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('book2')">Look inside</button>  Charles Brandon, Duke of Suffolk - The Inside Story</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('book3')">Look inside</button>  Tu-dos and Tu-don'ts: A Handbook of Tudor Etiquette</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('book4')">Look inside</button>  Hum me the 8th: Music of a Bygone Age</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('memo1')">Look inside</button>  Memo 1</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('memo2')">Look inside</button>  Memo 2</li>
+                            <li><button class="btn btn-sm btn-outline-primary mt-2" onclick="showBook('memo3')">Look inside</button>  Memo 3</li>
+                        </ul>
                     </div>
-                    <div id="art2" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The ceiling panel's design is striking.</p>
-                       <img class="img-fluid" src="assets/images/art2.png">
+                    <div id="book1" style="display:none;" class="bg-secondary col-sm-12">
+                        <p>
+                            A cardinal named Thomas Wosley,<br/>
+                            Was drinking his tea – or was he?<br/>
+                            If in the wrong cup<br/>
+                            He’ll refuse to sup<br/>
+                            He’ll sit and he’ll stew and sulk crossly
+                        </p>
+                        <p>
+                            Though known for having the blues, <br/>
+                            The cardinal’s pick of the hues,<br/>
+                            It has to be said<br/>
+                            Can only be red<br/>
+                            His dress sense offers clear clues
+                        </p>                       
                     </div>
-                    <div id="art3" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The design of the ceiling panel is striking.</p>
-                       <img class="img-fluid" src="assets/images/art3.png">
+                    <div id="book2" style="display:none;" class="bg-secondary col-sm-12">
+                        <p>
+                            In September 1521, Suffolk led his household, family, and friends to war in France. His expedition was co-ordinated with Bourbon’s rebellion. Unfortunately his enthusiasm for biscuits was irreparably damaged when he saw Bourbon had failed completely: his conspiracy had crumbled and his army dissolved. Henceforth, Suffolk’s preferred cocoa-based snack was to be the brownie, even leading to his nickname “Charles Brownie” at court.
+                        </p>
                     </div>
-                    <div id="art4" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The ceiling panel is strikingly designed.</p>
-                       <img class="img-fluid" src="assets/images/art4.png">
-                    </div>                    
-                    <div id="art5" style="display:none;" class="bg-light col-sm-12">
-                        <p class="lead">The panel on the ceiling has a striking design.</p>
-                       <img class="img-fluid" src="assets/images/art5.png">
-                    </div> -->
+                    <div id="memo1" style="display:none;" class="bg-secondary col-sm-12">
+                        <h3>Memo: Guest Preferences</h3>
+                        <p>
+                            Henry wants Jane at his right hand. Wolsey refuses to sit at the same table as Anne Boleyn. Anne of Cleves is partial to a blueberry muffin, while Catherine of Aragon will only eat tea loaf. Catherine Parr’s favourite snack is the Parrty Ring
+                        </p>
+                    </div>
+                    <div id="book3" style="display:none;" class="bg-secondary col-sm-12">
+                        <h3> On Seating Plans</h3>
+                        <p>
+                            Never seat a lady next to her husband’s other wife. <br/>
+                            To seat two guests with the same name on the same table risks embarrassing confusion, avoid this at all costs. <br/>
+                            All suitable guests will know it’s polite to take the slice of cake nearest to you.
+                        </p>
+                        <h3>On Crockery</h3>
+                        <p>
+                            All the teacups on a table should have matching colours. <br/>
+                            Anne should have a spotted teacup but Catherine must have a striped teacup. <br/>
+                            It is unbecoming for a man to use a patterned teacup.
+                        </p>
+                    </div>
+                   <div id="book4" style="display:none;" class="bg-secondary col-sm-12">
+                        <p>
+                            Pastime with good company<br/>
+                            I love and shall until I die;<br/>
+                            Grudge who will, but none deny,<br/>
+                            So give me please my pecan pie.<br/>
+                            For my pastance<br/>
+                            Hunt, sing, and dance.<br/>
+                            My heart is set:<br/>
+                            All goodly sport<br/>
+                            For my comfort,<br/>
+                            Who shall me let?<br/>
+                        </p>
+                    </div>
+                    <div id="memo2" style="display:none;" class="bg-secondary col-sm-12">
+                        <h3>GUEST LIST</h3>
+                        <p>
+                            Henry VIII<br/>
+                            Cardinal Wolsey<br/>
+                            Charles Brandon<br/>
+                            Catherine of Aragon<br/>
+                            Anne Boleyn<br/>
+                            Jane Seymour<br/>
+                            Anne of Cleves<br/>
+                            Catherine Howard<br/>
+                            Catherine Parr
+                        </p>
+                    </div>
+
+                    <div id="memo3" style="display:none;" class="col-sm-12">
+                        <img class="img-fluid" src="assets/images/nutrition.png">
+                    </div>
+
+                    <div id="cabinet" style="display:none;" class="bg-light col-sm-12">
+                        <p class="lead">The cabinet is filled with tea drinking paraphernalia.</p>
+                       <img class="img-fluid" src="assets/images/cups.png">
+                    </div>
                 </div>
 
                 <div class="row mt-2 mb-2">
@@ -151,18 +217,26 @@
 
     <script>
         function showClue(id){
-            $('#plinth').hide()
-            $('#art1').hide()
-            $('#art2').hide()
-            $('#art3').hide()
-            $('#art4').hide()
-            $('#art5').hide()
+            $('#tables').hide()
+            $('#books').hide()
+            $('#cabinet').hide()
+            $('#'+ id).show()
+        }
+
+        function showBook(id){
+            $('#book1').hide()
+            $('#book2').hide()
+            $('#book3').hide()
+            $('#book4').hide()
+            $('#memo1').hide()
+            $('#memo2').hide()
+            $('#memo3').hide()
             $('#'+ id).show()
         }
 
 
         function openDoor(){
-            if ( $('#digit1 select').val() == "6" && $('#digit2 select').val() == "7" && $("#digit3 select").val() == "0" ) {
+            if ( $('#digit1 select').val() == "1" && $('#digit2 select').val() == "6" && $("#digit3 select").val() == "0" ) {
                 window.location = "success.html"
             } else {
                 alert("The door is still locked...")
