@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="assets/css/font_awesome_all.css" rel="stylesheet">
+    <style>
+      .bottom-bar-icon {
+        font-size: 2em;
+      }
+
+      .bottom-bar-icon:hover {
+        color: lightblue;
+        cursor: pointer;
+      }
+
+      .window-icon:hover {
+        color: black;
+        cursor: pointer;
+      }
+    </style>
+
+    <title>All Zoom and Gloom </title>
+  </head>
+  <body style="background-color: #050300;
+background-image: url('assets/images/3px-tile.png');";
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */">
+
+    <div class="container-md bg-white px-0 vh-100">
+      <div class="row" style="height: 30px;">
+        <div class="col pt-1">
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+        </div>
+        <div class="col pt-1 pr-4 text-right align-middle">
+          <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
+          <span class="text-secondary window-icon" onclick="maximizeButtonPress()"><i class="fas fa-window-maximize"></i></span>
+          <span class="text-secondary window-icon" onclick="exitButtonPress()"><i class="fas fa-times"></i></span>
+        </div>
+      </div>
+      <div class="container bg-dark" style="height: calc(100vh - 80px);">
+        <div class="row" style="height: 50%;">
+          <div class="col m-1 mt-2 ml-2 text-white-50 text-center"><img src="assets/images/1/j-argon-tolkein.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2 text-white-50 text-center"><img src="assets/images/you.png" class="img-fluid"></div>
+        </div>
+        <div class="row" style="height: 50%;">
+          <div class="col m-1 ml-2 mb-2 text-white-50 text-center"><img src="assets/images/1/w-m-offegon.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2 text-white-50 text-center"><img src="assets/images/1/f-upwithzoom.png" class="img-fluid"></div>
+        </div>
+      </div>
+      <div class="container" style="background-color: #262729; height: 50px;">
+        <div class="row">
+            <div class="col-sm-3 text-white-50 text-center">
+               <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+                <i class="fas fa-microphone"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
+                <i class="fas fa-video-slash"></i>
+              </span>
+            </div>
+            <div class="col-sm-9 align-middle text-white-50">
+              <span class="bottom-bar-icon pl-4" onclick="pollsButtonPress()">
+                <i class="fas fa-chart-bar"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="reactionsButtonPress()">
+                <i class="fas fa-grin-alt"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="chatButtonPress()">
+                <i class="fas fa-comment-dots"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="breakoutRoomsButtonPress()">
+                <i class="fas fa-th-large"></i>
+              </span>
+
+              <button type="button" class="btn btn-danger mt-2 float-right" onclick="leaveMeetingButtonPress()">Leave Meeting</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="modal-text">Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalOkButtonPress()">OK</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+      function minimizeButtonPress(){
+      }
+      function maximizeButtonPress(){
+      }
+      function exitButtonPress(){
+      }
+      function microphoneButtonPress(){
+      }
+      function showVideoButtonPress(){
+      }
+      function pollsButtonPress(){
+      }
+      function reactionsButtonPress(){
+      }
+      function chatButtonPress(){
+      }
+      function breakoutRoomsButtonPress(){
+      }
+      function leaveMeetingButtonPress(){
+        showModal("You want to leave the meeting? OK... but it won't be this easy next time!")
+      }
+      function showModal(text){
+        $('.modal-text').text(text);
+        $('.modal').modal()
+      }
+      function modalOkButtonPress(){
+        window.location = "2.html";
+      }
+    </script>
+  </body>
+</html>
