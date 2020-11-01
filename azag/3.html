@@ -90,7 +90,7 @@ background-image: url('assets/images/3px-tile.png');">
             </div>
             <div class="row">
               <div class="col">
-                <form onsubmit="return false;">
+                <form onsubmit="return false;" autocomplete="off">
                   <div class="form-row">
                     <div class="col">
                       <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
@@ -137,12 +137,12 @@ background-image: url('assets/images/3px-tile.png');">
         $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
 
         if (message.trim().toLowerCase() == "virtual toilet paper") {
-          $('#chat-history').append("<div class='alert alert-primary'><b>Heidi Messi-Room:&nbsp;</b>That makes total sense, thanks!</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>That makes total sense, thanks!</div>")
           setTimeout(function () {
             window.location = "3a.html"
           }, 3000);
         } else {
-          $('#chat-history').append("<div class='alert alert-primary'><b>Heidi Messi-Room:&nbsp;</b>Hmm, that doesn't sound right.</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Hmm, that doesn't sound right.</div>")
 
         }
       }
