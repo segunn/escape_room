@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="assets/css/font_awesome_all.css" rel="stylesheet">
+    <style>
+      .bottom-bar-icon {
+        font-size: 2em;
+      }
+
+      .bottom-bar-icon:hover {
+        color: lightblue;
+        cursor: pointer;
+      }
+
+      .window-icon:hover {
+        color: black;
+        cursor: pointer;
+      }
+
+      .video_windows .col:hover {
+      	cursor: grab;
+      	border: 1px solid lightblue;
+      }
+    </style>
+
+    <title>All Zoom and Gloom </title>
+  </head>
+  <body style="background-color: #050300;
+background-image: url('assets/images/3px-tile.png');">
+
+    <div class="container-md bg-white px-0">
+      <div class="row" style="height: 30px;">
+        <div class="col pt-1">
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+        </div>
+        <div class="col pt-1 pr-4 text-right">
+          <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
+          <span class="text-secondary window-icon" onclick="maximizeButtonPress()"><i class="fas fa-window-maximize"></i></span>
+          <span class="text-secondary window-icon" onclick="exitButtonPress()"><i class="fas fa-times"></i></span>
+        </div>
+      </div>
+      <div class="container bg-dark">
+        <div class="row video_windows">
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/4/jan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/4/dan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/4/anne.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/4/stan.png" class="img-fluid"></div>
+        </div>
+        <div class="row video_windows">
+          <div class="col m-1 ml-2"><img src="assets/images/4/ken.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/4/glen.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/4/ben.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/4/sven.png" class="img-fluid"></div>
+        </div>
+        <div class="row video_windows">
+          <div class="col m-1 mb-2"><img src="assets/images/4/finn.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/4/lynne.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2"><img src="assets/images/4/glynn.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/4/gwyn.png" class="img-fluid"></div>
+        </div>
+      </div>
+      <div class="container" style="background-color: #262729;">
+        <div class="row">
+            <div class="col-sm-3 text-white-50 text-center">
+              <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+                <i class="fas fa-microphone"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
+                <i class="fas fa-video-slash"></i>
+              </span>
+            </div>
+            <div class="col-sm-9 align-middle text-white-50">
+              <span class="bottom-bar-icon pl-4" onclick="pollsButtonPress()">
+                <i class="fas fa-chart-bar"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="reactionsButtonPress()">
+                <i class="fas fa-grin-alt"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="chatButtonPress()">
+                <i class="fas fa-comment-dots"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="breakoutRoomsButtonPress()">
+                <i class="fas fa-th-large"></i>
+              </span>
+
+              <button type="button" class="btn btn-danger mt-2 float-right" onclick="leaveMeetingButtonPress()">Leave Meeting</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" id="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="modal-text">Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalOkButtonPress()">OK</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="modal" tabindex="-1" id="chat-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col" id="chat-history">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form onsubmit="return false;" autocomplete="off">
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-primary" onclick="chatSendButtonPress()"><i class="fas fa-share-square"></i></button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script>
+    <script>
+      const sortable = new Draggable.Swappable(document.querySelectorAll('.video_windows'), {
+	    draggable: '.col',
+	    mirror: {
+	    	constrainDimensions: true
+	    }
+	  });
+
+      function minimizeButtonPress(){
+
+      }
+      function maximizeButtonPress(){
+      }
+      function exitButtonPress(){
+      }
+      function microphoneButtonPress(){
+      }
+      function showVideoButtonPress(){
+      }
+      function pollsButtonPress(){
+      }
+      function reactionsButtonPress(){
+      }
+      function chatButtonPress(){
+        $('#chat-modal').modal()
+      }
+      function chatSendButtonPress(){
+        var message = $('#chat-box').val()
+        $('#chat-box').val('')
+        $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
+
+        if (message.trim().toLowerCase() == "179676") {
+          $('#chat-modal').modal("hide")
+          showModal("Meeting escape activated, please confirm you want to exit this meeting?")
+        } else {
+          $('#chat-history').append("<div class='alert alert-info'><b>Glen:&nbsp;</b> This never-ending meeting was bad enough already, without your nonsense in the chat. (╯°□°）╯︵ ┻━┻</div>")
+
+        }
+      }
+      function breakoutRoomsButtonPress(){
+      }
+      function leaveMeetingButtonPress(){
+      }
+      function showModal(text){
+        $('#modal .modal-text').text(text);
+        $('#modal').modal()
+      }
+      function modalOkButtonPress(){
+      	window.location = "5.html"
+      }
+    </script>
+  </body>
+</html>
