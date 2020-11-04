@@ -104,22 +104,55 @@ background-image: url('assets/images/3px-tile.png');">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
+            <div class="alert alert-danger alert-dismissible" role="alert" id="breakout_fail" style="display:none;">
+              <span class="alert-text"></span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
             <p class="lead">Sort your participants into breakout rooms</p>
             <form onsubmit="return false;" autocomplete="off">
               <div class="form-group">
-                Girarrrrrffe
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                <label for="room_select_1">Room 1</label>
+                <select multiple="multiple" id="room_select_1">
+                  <option>Girarrrrffe</option>
+                  <option>Giraphael</option>
+                  <option>Gandaffe the Grey</option>
+                  <option>Giraffio Nelson</option>
+                  <option>Giraffeses II</option>
+                  <option>Lesley Goraffe</option>
+                  <option>Gerald</option>
+                  <option>Gir-R-ffe Kelly</option>
+                  <option>Gertrude</option>
+                </select>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              <div class="form-group">
+                <label for="room_select_1">Room 2</label>
+                <select multiple="multiple" id="room_select_2">
+                  <option>Girarrrrffe</option>
+                  <option>Giraphael</option>
+                  <option>Gandaffe the Grey</option>
+                  <option>Giraffio Nelson</option>
+                  <option>Giraffeses II</option>
+                  <option>Lesley Goraffe</option>
+                  <option>Gerald</option>
+                  <option>Gir-R-ffe Kelly</option>
+                  <option>Gertrude</option>
+                </select>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="inlineCheckbox3" value="option3">
-                <label class="form-check-label" for="inlineCheckbox3">3</label>
-              </div>
+              <div class="form-group">
+                <label for="room_select_1">Room 3</label>
+                <select multiple="multiple" id="room_select_3">
+                  <option>Girarrrrffe</option>
+                  <option>Giraphael</option>
+                  <option>Gandaffe the Grey</option>
+                  <option>Giraffio Nelson</option>
+                  <option>Giraffeses II</option>
+                  <option>Lesley Goraffe</option>
+                  <option>Gerald</option>
+                  <option>Gir-R-ffe Kelly</option>
+                  <option>Gertrude</option>
+                </select>
               </div>
             </form>
           </div>
@@ -136,6 +169,9 @@ background-image: url('assets/images/3px-tile.png');">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- Bootstrap multiselect -->
+    <script type="text/javascript" src="assets/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css" type="text/css"/>
     <script>
       function minimizeButtonPress(){
       }
@@ -164,6 +200,81 @@ background-image: url('assets/images/3px-tile.png');">
       }
       function modalOkButtonPress(){
       }
+      function arraysEqual(a, b){
+        return a != undefined && b != undefined && a.length === b.length && a.every((val, index) => val === b[index])
+
+      }
+      function breakoutModalOkButtonPress(){
+          var expected_rooms = [
+            ["Girarrrrffe", "Gir-R-ffe Kelly", "Gerald"].sort(),
+            ["Giraffio Nelson", "Lesley Goraffe", "Gandaffe the Grey"].sort(),
+            ["Giraphael", "Giraffeses II", "Gertrude"].sort()
+          ]
+
+          var room_1_occupants = $.makeArray($('#room_select_1 option:selected').map(function(a, item){return item.value;})).sort();
+          var room_2_occupants = $.makeArray($('#room_select_2 option:selected').map(function(a, item){return item.value;})).sort();
+          var room_3_occupants = $.makeArray($('#room_select_3 option:selected').map(function(a, item){return item.value;})).sort();
+
+          if ( room_1_occupants.length != 3 || room_2_occupants.length != 3 || room_3_occupants.length != 3 ){
+            $("#breakout_fail").show()
+            $("#breakout_fail .alert-text").text("That simply won't do, there should be 3 giraffes in each room")
+            return false
+          }
+
+          if (arraysEqual(room_1_occupants, expected_rooms[0])) {
+            delete expected_rooms[0]
+          } else if (arraysEqual(room_1_occupants, expected_rooms[1])) {
+            delete expected_rooms[1]
+          } else if (arraysEqual(room_1_occupants, expected_rooms[2])) {
+            delete expected_rooms[2]
+          } else {
+            $("#breakout_fail").show()
+            $("#breakout_fail .alert-text").text("Giraffes hate awkward breakout rooms, they won't stick their necks out unless they have common interests to discuss.")
+            return false
+          }
+           if (arraysEqual(room_2_occupants, expected_rooms[0])) {
+            delete expected_rooms[0]
+          } else if (arraysEqual(room_2_occupants, expected_rooms[1])) {
+            delete expected_rooms[1]
+          } else if (arraysEqual(room_2_occupants, expected_rooms[2])) {
+            delete expected_rooms[2]
+          } else {
+            $("#breakout_fail").show()
+            $("#breakout_fail .alert-text").text("Giraffes hate awkward breakout rooms, they won't stick their necks out unless they have common interests to discuss.")
+            return false
+          }
+           if (arraysEqual(room_3_occupants, expected_rooms[0])) {
+            delete expected_rooms[0]
+          } else if (arraysEqual(room_3_occupants, expected_rooms[1])) {
+            delete expected_rooms[1]
+          } else if (arraysEqual(room_3_occupants, expected_rooms[2])) {
+            delete expected_rooms[2]
+          } else {
+            $("#breakout_fail").show()
+            $("#breakout_fail .alert-text").text("Giraffes hate awkward breakout rooms, they won't stick their necks out unless they have common interests to discuss.")
+            return false
+          }
+
+          window.location="6.html"
+      }
+
+      $(document).ready(function() {
+          $('#room_select_1').multiselect({
+            dropRight: true,
+            numberDisplayed: 3,
+            nSelectedText: "is too many giraffes to fit in one room!"
+          });
+          $('#room_select_2').multiselect({
+            dropRight: true,
+            numberDisplayed: 3,
+            nSelectedText: "is too many giraffes to fit in one room!"
+          });
+          $('#room_select_3').multiselect({
+            dropRight: true,
+            numberDisplayed: 3,
+            nSelectedText: "is too many giraffes to fit in one room!"
+          });
+      });
     </script>
   </body>
 </html>
