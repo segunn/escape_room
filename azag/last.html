@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="assets/css/font_awesome_all.css" rel="stylesheet">
+    <style>
+      .bottom-bar-icon {
+        font-size: 2em;
+      }
+
+      .bottom-bar-icon:hover {
+        color: lightblue;
+        cursor: pointer;
+      }
+
+      .window-icon:hover {
+        color: black;
+        cursor: pointer;
+      }
+    </style>
+
+    <title>All Zoom and Gloom </title>
+  </head>
+  <body style="background-color: #050300;
+background-image: url('assets/images/3px-tile.png');">
+
+    <div class="container-md bg-white px-0">
+      <div class="row" style="height: 30px;">
+        <div class="col pt-1">
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+        </div>
+        <div class="col pt-1 pr-4 text-right">
+          <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
+          <span class="text-secondary window-icon" onclick="maximizeButtonPress()"><i class="fas fa-window-maximize"></i></span>
+          <span class="text-secondary window-icon" onclick="exitButtonPress()"><i class="fas fa-times"></i></span>
+        </div>
+      </div>
+      <div class="container bg-dark">
+        <div class="row">
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/7/gerald.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/you.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/7/fred.png" class="img-fluid"></div>
+        </div>
+        <div class="row">
+          <div class="col m-1 ml-2"><img src="assets/images/7/heidi.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/7/larry.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/7/glen.png" class="img-fluid"></div>
+        </div>
+      </div>
+      <div class="container" style="background-color: #262729;">
+        <div class="row">
+            <div class="col-sm-3 text-white-50 text-center">
+              <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+                <i class="fas fa-microphone"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
+                <i class="fas fa-video-slash"></i>
+              </span>
+            </div>
+            <div class="col-sm-9 align-middle text-white-50">
+              <span class="bottom-bar-icon pl-4" onclick="pollsButtonPress()">
+                <i class="fas fa-chart-bar"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="reactionsButtonPress()">
+                <i class="fas fa-grin-alt"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="chatButtonPress()">
+                <i class="fas fa-comment-dots"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="breakoutRoomsButtonPress()">
+                <i class="fas fa-th-large"></i>
+              </span>
+              <span class="bottom-bar-icon pl-4" onclick="hacksawButtonPress()">
+                <i class="fas fa-laptop-code"></i>
+              </span>
+              <button type="button" class="btn btn-danger mt-2 float-right" onclick="leaveMeetingButtonPress()">Leave Meeting</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" id="code_modal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          
+        </div>
+      </div>
+    </div>    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="assets/js/terminal.js"></script>
+    <script>
+      function minimizeButtonPress(){
+      }
+      function maximizeButtonPress(){
+      }
+      function exitButtonPress(){
+      }
+      function microphoneButtonPress(){
+      }
+      function showVideoButtonPress(){
+      }
+      function pollsButtonPress(){
+      }
+      function reactionsButtonPress(){
+      }
+      function chatButtonPress(){
+      }
+      function breakoutRoomsButtonPress(){
+      }
+      function leaveMeetingButtonPress(){
+      }
+      function showModal(text){
+        $('#modal .modal-text').text(text);
+        $('#modal').modal()
+      }
+      function modalOkButtonPress(){
+      }
+      function hacksawButtonPress(){
+        var myTerminal = new Terminal()
+        $("#code_modal .modal-content").html(myTerminal.html)
+        $('#code_modal').modal()
+        myTerminal.print("Zoom Console v4.3")
+        myTerminal.sleep(1000, function(){
+          myTerminal.print("... Zoom-bot activated")
+          showTerminalHelp(myTerminal, false)
+        })
+      }
+      function showTerminalHelp(myTerminal, clear=true){
+        myTerminal.sleep(2000, function(){
+          if (clear) { myTerminal.clear() }
+          myTerminal.print("OPTIONS:")
+          myTerminal.print("To talk to the Zoom-bot, press 1.")
+          myTerminal.print("To check the logs, press 2.")
+          myTerminal.print("To exit Zoom, press 3.")
+          awaitCommand(myTerminal)
+        })
+      }
+      function awaitCommand(myTerminal){
+        myTerminal.sleep(1000, function(){
+          myTerminal.input("INPUT: ", function(userInput) {
+            if (userInput == "1") {
+              chatToZoom(myTerminal)
+            }  
+            else if (userInput == "2") {
+              showLogs(myTerminal)
+            }
+            else if (userInput == "3") {
+              myTerminal.input("Administrator authorisation is required to leave the meeting.")
+              myTerminal.input("Username:", function(usern){
+                myTerminal.input("Password:", function(pass){
+                  if (usern == "superzoombot" && pass == "Barnard Castle"){
+                    window.location = "done.html"
+                  } else {
+                    myTerminal.print("Authentication failed, you are not authorised to leave this meeting.")
+                    showTerminalHelp(myTerminal)
+                  }
+                })
+              })
+            } else {
+              myTerminal.print("Zoom-bot has encountered an error and can't fulfil that request right now.")
+              showTerminalHelp(myTerminal)            
+            }
+          })
+        })
+      }
+      function showLogs(myTerminal){
+        myTerminal.clear()
+        myTerminal.print("[LOG] [2020-01-13] zoom-bot upgraded to version 4.1")
+        myTerminal.print("[LOG] [2020-02-05] password changed for user zoomymczoomface")
+        myTerminal.print("[LOG] [2020-03-26] usage alert: record number of meetings in progress")
+        myTerminal.print("[LOG] [2020-05-21] user superzoombot left a meeting")
+        myTerminal.print("[LOG] [2020-06-09] zoom-bot upgraded to version 4.2")
+        myTerminal.print("[LOG] [2020-08-13] password reminder for superzoombot set: \"Ideal holiday\"")
+        myTerminal.print("[LOG] [2020-10-28] zoom-bot upgraded to version 4.3")
+        myTerminal.input("Return to Zoom-bot? [y\n]", function(userInput){
+          if (userInput == "y") {
+            showTerminalHelp(myTerminal)
+          } else {
+            showLogs(myTerminal)
+          }
+        })
+      }
+      function chatToZoom(myTerminal) {
+        myTerminal.clear()
+        myTerminal.print("Zoom-bot: Hello, new friend! What shall we converse about today?")
+        myTerminal.input("INPUT: ", function(userInput) {
+            myTerminal.print("Zoom-bot: Let's talk about me. If I could visit the 3D world, I'd love to go to Barnard Castle, have you ever been there?")
+            myTerminal.input("INPUT: ", function(userInput) {
+                myTerminal.print("Zoom-bot: Hmm, well, I'm glad we had this chat, thanks for stopping by!")
+                showTerminalHelp(myTerminal, false)
+            })
+        })
+      }
+    </script>
+  </body>
+</html>
