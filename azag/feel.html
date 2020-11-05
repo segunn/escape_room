@@ -42,18 +42,29 @@ background-image: url('assets/images/3px-tile.png');">
       </div>
       <div class="container bg-dark">
         <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/1/j-argon-tolkein.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/feel/1.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2">
+              <div style="background-image: url('assets/images/you.png'); background-size: contain; height: 100%;" id="you_square">
+                
+              </div>
+          </div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/feel/3.png" class="img-fluid"></div>
         </div>
         <div class="row">
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/1/w-m-offegon.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/1/f-upwithzoom.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2"><img src="assets/images/feel/4.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/feel/5.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/feel/6.png" class="img-fluid"></div>
+        </div>
+        <div class="row">
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/feel/7.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2"><img src="assets/images/feel/8.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/feel/9.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
         <div class="row">
             <div class="col-sm-3 text-white-50 text-center">
-               <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+              <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
                 <i class="fas fa-microphone"></i>
               </span>
               <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
@@ -79,7 +90,7 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1">
+    <div class="modal" tabindex="-1" id="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -91,7 +102,36 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
         </div>
       </div>
-    </div>
+    </div>    
+
+    <div class="modal" tabindex="-1" id="reactionPicker">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <img src="assets/images/feel/thumbUp.png" class="img-fluid"  onclick="reactionChoice('thumbUp')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/thumbDown.png" class="img-fluid"  onclick="reactionChoice('thumbDown')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/laugh.png" class="img-fluid"  onclick="reactionChoice('laugh')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/frown.png" class="img-fluid"  onclick="reactionChoice('frown')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/grin.png" class="img-fluid"  onclick="reactionChoice('grin')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/cool.png" class="img-fluid"  onclick="reactionChoice('cool')">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -99,6 +139,7 @@ background-image: url('assets/images/3px-tile.png');">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
+      var last_reactions = [];
       function minimizeButtonPress(){
       }
       function maximizeButtonPress(){
@@ -112,20 +153,42 @@ background-image: url('assets/images/3px-tile.png');">
       function pollsButtonPress(){
       }
       function reactionsButtonPress(){
+        $('#reactionPicker').modal()
+      }
+      function reactionChoice(name){
+        if (last_reactions.length > 2){
+          last_reactions.shift()
+        }
+        last_reactions.push(name)
+
+        desired_html = ""
+        for (i = 0, len = last_reactions.length; i < len; i++) {
+          desired_html += '<img src="assets/images/feel/' + last_reactions[i] +'.png" style="height: 40px;" class="px-1 pt-1">' ;
+        }
+        $('#you_square').html(desired_html)
+
+        $('#reactionPicker').modal('hide')
+
+        if (arraysEqual([...last_reactions].sort(), ["cool", "laugh", "thumbDown"])) {
+          showModal("Well done, you manage to gauge the appropriate reactions! Do you want to leave this meeting?")
+        }
+      }
+      function arraysEqual(a, b){
+        return a.length === b.length && a.every((val, index) => val === b[index])
+
       }
       function chatButtonPress(){
       }
       function breakoutRoomsButtonPress(){
       }
       function leaveMeetingButtonPress(){
-        showModal("You want to leave the meeting? OK... but it won't be this easy next time!")
       }
       function showModal(text){
-        $('.modal-text').text(text);
-        $('.modal').modal()
+        $('#modal .modal-text').text(text);
+        $('#modal').modal()
       }
       function modalOkButtonPress(){
-        window.location = "2.html";
+        window.location = "graph.html"
       }
     </script>
   </body>

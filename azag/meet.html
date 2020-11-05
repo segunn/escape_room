@@ -42,18 +42,18 @@ background-image: url('assets/images/3px-tile.png');">
       </div>
       <div class="container bg-dark">
         <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/3/m-fawlty1.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you2.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/meet/j-argon-tolkein.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you.png" class="img-fluid"></div>
         </div>
         <div class="row">
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/3/h-messi-room.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/3/c-shannon-staybull.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/meet/w-m-offegon.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/meet/f-upwithzoom.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
         <div class="row">
             <div class="col-sm-3 text-white-50 text-center">
-              <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+               <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
                 <i class="fas fa-microphone"></i>
               </span>
               <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
@@ -79,34 +79,19 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1" id="chat-modal">
+    <div class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <div class="row">
-              <div class="col" id="chat-history">
-                <div class="alert alert-info"><b>Heidi Messi-Room:&nbsp;</b>What is Mike suggesting now?</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <form onsubmit="return false;" autocomplete="off">
-                  <div class="form-row">
-                    <div class="col">
-                      <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-primary" onclick="chatSendButtonPress()"><i class="fas fa-share-square"></i></button>
-                    </div>
-                  </div>
-                </form>
-
-              </div>
-            </div>
+            <p class="modal-text">Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalOkButtonPress()">OK</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -129,32 +114,18 @@ background-image: url('assets/images/3px-tile.png');">
       function reactionsButtonPress(){
       }
       function chatButtonPress(){
-        $('#chat-modal').modal()
-      }
-      function chatSendButtonPress(){
-        var message = $('#chat-box').val()
-        $('#chat-box').val('')
-        $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
-
-        if (message.trim().toLowerCase() == "lockdown memorabilia") {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Of course! He's a genius!</div>")
-          setTimeout(function () {
-            window.location = "3b.html"
-          }, 3000);
-        } else {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Nah, I'm sure he's come up with something better than that.</div>")
-
-        }
       }
       function breakoutRoomsButtonPress(){
       }
       function leaveMeetingButtonPress(){
+        showModal("You want to leave the meeting? OK... but it won't be this easy next time!")
       }
       function showModal(text){
         $('.modal-text').text(text);
         $('.modal').modal()
       }
       function modalOkButtonPress(){
+        window.location = "feel.html";
       }
     </script>
   </body>

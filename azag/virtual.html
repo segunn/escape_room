@@ -22,6 +22,15 @@
         color: black;
         cursor: pointer;
       }
+
+      .video_windows .col {
+        border: 1px solid #343a40;
+      }
+
+      .video_windows .col:hover {
+      	cursor: grab;
+      	border: 1px solid lightblue;
+      }
     </style>
 
     <title>all zoom and gloom</title>
@@ -41,24 +50,23 @@ background-image: url('assets/images/3px-tile.png');">
         </div>
       </div>
       <div class="container bg-dark">
-        <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/2/1.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2">
-              <div style="background-image: url('assets/images/you.png'); background-size: contain; height: 100%;" id="you_square">
-                
-              </div>
-          </div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/2/3.png" class="img-fluid"></div>
+        <div class="row video_windows">
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/virtual/jan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/virtual/dan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/virtual/anne.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/virtual/stan.png" class="img-fluid"></div>
         </div>
-        <div class="row">
-          <div class="col m-1 ml-2"><img src="assets/images/2/4.png" class="img-fluid"></div>
-          <div class="col m-1"><img src="assets/images/2/5.png" class="img-fluid"></div>
-          <div class="col m-1 mr-2"><img src="assets/images/2/6.png" class="img-fluid"></div>
+        <div class="row video_windows">
+          <div class="col m-1 ml-2"><img src="assets/images/virtual/ken.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/virtual/glen.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/virtual/ben.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/virtual/sven.png" class="img-fluid"></div>
         </div>
-        <div class="row">
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/2/7.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2"><img src="assets/images/2/8.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/2/9.png" class="img-fluid"></div>
+        <div class="row video_windows">
+          <div class="col m-1 mb-2"><img src="assets/images/virtual/finn.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/virtual/lynne.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2"><img src="assets/images/virtual/glynn.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/virtual/gwyn.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
@@ -103,44 +111,50 @@ background-image: url('assets/images/3px-tile.png');">
         </div>
       </div>
     </div>    
-
-    <div class="modal" tabindex="-1" id="reactionPicker">
-      <div class="modal-dialog modal-dialog-centered">
+    <div class="modal" tabindex="-1" id="chat-modal">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
             <div class="row">
-              <div class="col">
-                <img src="assets/images/2/thumbUp.png" class="img-fluid"  onclick="reactionChoice('thumbUp')">
+              <div class="col" id="chat-history">
               </div>
+            </div>
+            <div class="row">
               <div class="col">
-                <img src="assets/images/2/thumbDown.png" class="img-fluid"  onclick="reactionChoice('thumbDown')">
-              </div>
-              <div class="col">
-                <img src="assets/images/2/laugh.png" class="img-fluid"  onclick="reactionChoice('laugh')">
-              </div>
-              <div class="col">
-                <img src="assets/images/2/frown.png" class="img-fluid"  onclick="reactionChoice('frown')">
-              </div>
-              <div class="col">
-                <img src="assets/images/2/grin.png" class="img-fluid"  onclick="reactionChoice('grin')">
-              </div>
-              <div class="col">
-                <img src="assets/images/2/cool.png" class="img-fluid"  onclick="reactionChoice('cool')">
+                <form onsubmit="return false;" autocomplete="off">
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-primary" onclick="chatSendButtonPress()"><i class="fas fa-share-square"></i></button>
+                    </div>
+                  </div>
+                </form>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>  
+    </div>   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script>
     <script>
-      var last_reactions = [];
+      const sortable = new Draggable.Swappable(document.querySelectorAll('.video_windows'), {
+	    draggable: '.col',
+	    mirror: {
+	    	constrainDimensions: true
+	    }
+	  });
+
       function minimizeButtonPress(){
+
       }
       function maximizeButtonPress(){
       }
@@ -153,31 +167,22 @@ background-image: url('assets/images/3px-tile.png');">
       function pollsButtonPress(){
       }
       function reactionsButtonPress(){
-        $('#reactionPicker').modal()
-      }
-      function reactionChoice(name){
-        if (last_reactions.length > 2){
-          last_reactions.shift()
-        }
-        last_reactions.push(name)
-
-        desired_html = ""
-        for (i = 0, len = last_reactions.length; i < len; i++) {
-          desired_html += '<img src="assets/images/2/' + last_reactions[i] +'.png" style="height: 40px;" class="px-1 pt-1">' ;
-        }
-        $('#you_square').html(desired_html)
-
-        $('#reactionPicker').modal('hide')
-
-        if (arraysEqual([...last_reactions].sort(), ["cool", "laugh", "thumbDown"])) {
-          showModal("Well done, you manage to gauge the appropriate reactions! Do you want to leave this meeting?")
-        }
-      }
-      function arraysEqual(a, b){
-        return a.length === b.length && a.every((val, index) => val === b[index])
-
       }
       function chatButtonPress(){
+        $('#chat-modal').modal()
+      }
+      function chatSendButtonPress(){
+        var message = $('#chat-box').val()
+        $('#chat-box').val('')
+        $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
+
+        if (message.trim().toLowerCase() == "179676") {
+          $('#chat-modal').modal("hide")
+          showModal("Meeting escape activated, please confirm you want to exit this meeting?")
+        } else {
+          $('#chat-history').append("<div class='alert alert-info'><b>Glen:&nbsp;</b> This never-ending meeting was bad enough already, without your nonsense in the chat. (╯°□°）╯︵ ┻━┻</div>")
+
+        }
       }
       function breakoutRoomsButtonPress(){
       }
@@ -188,7 +193,7 @@ background-image: url('assets/images/3px-tile.png');">
         $('#modal').modal()
       }
       function modalOkButtonPress(){
-        window.location = "3.html"
+      	window.location = "fugitives.html"
       }
     </script>
   </body>
