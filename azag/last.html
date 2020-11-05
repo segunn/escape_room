@@ -76,7 +76,7 @@ background-image: url('assets/images/3px-tile.png');">
                 <i class="fas fa-th-large"></i>
               </span>
               <span class="bottom-bar-icon pl-4" onclick="hacksawButtonPress()">
-                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-robot"></i>
               </span>
               <button type="button" class="btn btn-danger mt-2 float-right" onclick="leaveMeetingButtonPress()">Leave Meeting</button>
             </div>
@@ -138,7 +138,7 @@ background-image: url('assets/images/3px-tile.png');">
         myTerminal.sleep(2000, function(){
           if (clear) { myTerminal.clear() }
           myTerminal.print("OPTIONS:")
-          myTerminal.print("To talk to the Zoom-bot, press 1.")
+          myTerminal.print("To chat with Zoom-bot, press 1.")
           myTerminal.print("To check the logs, press 2.")
           myTerminal.print("To exit Zoom, press 3.")
           awaitCommand(myTerminal)
@@ -156,7 +156,7 @@ background-image: url('assets/images/3px-tile.png');">
             else if (userInput == "3") {
               myTerminal.input("Administrator authorisation is required to leave the meeting.")
               myTerminal.input("Username:", function(usern){
-                myTerminal.input("Password:", function(pass){
+                myTerminal.password("Password:", function(pass){
                   if (usern == "superzoombot" && pass == "Barnard Castle"){
                     window.location = "done.html"
                   } else {
@@ -181,7 +181,7 @@ background-image: url('assets/images/3px-tile.png');">
         myTerminal.print("[LOG] [2020-06-09] zoom-bot upgraded to version 4.2")
         myTerminal.print("[LOG] [2020-08-13] password reminder for superzoombot set: \"Ideal holiday\"")
         myTerminal.print("[LOG] [2020-10-28] zoom-bot upgraded to version 4.3")
-        myTerminal.input("Return to Zoom-bot? [y\n]", function(userInput){
+        myTerminal.input("Return to Zoom-bot? [y\/n]", function(userInput){
           if (userInput == "y") {
             showTerminalHelp(myTerminal)
           } else {

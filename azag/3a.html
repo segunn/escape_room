@@ -137,12 +137,12 @@ background-image: url('assets/images/3px-tile.png');">
         $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
 
         if (message.trim().toLowerCase() == "lockdown memorabilia") {
-          $('#chat-history').append("<div class='alert alert-primary'><b>Heidi Messi-Room:&nbsp;</b>Of course! He's a genius!</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Of course! He's a genius!</div>")
           setTimeout(function () {
             window.location = "3b.html"
           }, 3000);
         } else {
-          $('#chat-history').append("<div class='alert alert-primary'><b>Heidi Messi-Room:&nbsp;</b>Nah, I'm sure he's come up with something better than that.</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Nah, I'm sure he's come up with something better than that.</div>")
 
         }
       }
