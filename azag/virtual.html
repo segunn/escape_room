@@ -22,9 +22,18 @@
         color: black;
         cursor: pointer;
       }
+
+      .video_windows .col {
+        border: 1px solid #343a40;
+      }
+
+      .video_windows .col:hover {
+      	cursor: grab;
+      	border: 1px solid lightblue;
+      }
     </style>
 
-    <title>All Zoom and Gloom </title>
+    <title>all zoom and gloom</title>
   </head>
   <body style="background-color: #050300;
 background-image: url('assets/images/3px-tile.png');">
@@ -32,7 +41,7 @@ background-image: url('assets/images/3px-tile.png');">
     <div class="container-md bg-white px-0">
       <div class="row" style="height: 30px;">
         <div class="col pt-1">
-          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; all zoom and gloom</h5>
         </div>
         <div class="col pt-1 pr-4 text-right">
           <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
@@ -41,19 +50,29 @@ background-image: url('assets/images/3px-tile.png');">
         </div>
       </div>
       <div class="container bg-dark">
-        <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/1/j-argon-tolkein.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you.png" class="img-fluid"></div>
+        <div class="row video_windows">
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/virtual/jan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/virtual/dan.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2"><img src="assets/images/virtual/anne.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/virtual/stan.png" class="img-fluid"></div>
         </div>
-        <div class="row">
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/1/w-m-offegon.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/1/f-upwithzoom.png" class="img-fluid"></div>
+        <div class="row video_windows">
+          <div class="col m-1 ml-2"><img src="assets/images/virtual/ken.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/virtual/glen.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/virtual/ben.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/virtual/sven.png" class="img-fluid"></div>
+        </div>
+        <div class="row video_windows">
+          <div class="col m-1 mb-2"><img src="assets/images/virtual/finn.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/virtual/lynne.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2"><img src="assets/images/virtual/glynn.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/virtual/gwyn.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
         <div class="row">
             <div class="col-sm-3 text-white-50 text-center">
-               <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
+              <span class="bottom-bar-icon pl-4" onclick="microphoneButtonPress()">
                 <i class="fas fa-microphone"></i>
               </span>
               <span class="bottom-bar-icon pl-4" onclick="showVideoButtonPress()">
@@ -79,7 +98,7 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1">
+    <div class="modal" tabindex="-1" id="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -91,15 +110,51 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
         </div>
       </div>
-    </div>
+    </div>    
+    <div class="modal" tabindex="-1" id="chat-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col" id="chat-history">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form onsubmit="return false;" autocomplete="off">
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-primary" onclick="chatSendButtonPress()"><i class="fas fa-share-square"></i></button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script>
     <script>
+      const sortable = new Draggable.Swappable(document.querySelectorAll('.video_windows'), {
+	    draggable: '.col',
+	    mirror: {
+	    	constrainDimensions: true
+	    }
+	  });
+
       function minimizeButtonPress(){
+
       }
       function maximizeButtonPress(){
       }
@@ -114,18 +169,31 @@ background-image: url('assets/images/3px-tile.png');">
       function reactionsButtonPress(){
       }
       function chatButtonPress(){
+        $('#chat-modal').modal()
+      }
+      function chatSendButtonPress(){
+        var message = $('#chat-box').val()
+        $('#chat-box').val('')
+        $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
+
+        if (message.trim().toLowerCase() == "179676") {
+          $('#chat-modal').modal("hide")
+          showModal("Meeting escape activated, please confirm you want to exit this meeting?")
+        } else {
+          $('#chat-history').append("<div class='alert alert-info'><b>Glen:&nbsp;</b> This never-ending meeting was bad enough already, without your nonsense in the chat. (╯°□°）╯︵ ┻━┻</div>")
+
+        }
       }
       function breakoutRoomsButtonPress(){
       }
       function leaveMeetingButtonPress(){
-        showModal("You want to leave the meeting? OK... but it won't be this easy next time!")
       }
       function showModal(text){
-        $('.modal-text').text(text);
-        $('.modal').modal()
+        $('#modal .modal-text').text(text);
+        $('#modal').modal()
       }
       function modalOkButtonPress(){
-        window.location = "2.html";
+      	window.location = "fugitives.html"
       }
     </script>
   </body>

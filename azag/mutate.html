@@ -22,14 +22,9 @@
         color: black;
         cursor: pointer;
       }
-
-      .video_windows .col:hover {
-      	cursor: grab;
-      	border: 1px solid lightblue;
-      }
     </style>
 
-    <title>All Zoom and Gloom </title>
+    <title>all zoom and gloom</title>
   </head>
   <body style="background-color: #050300;
 background-image: url('assets/images/3px-tile.png');">
@@ -37,7 +32,7 @@ background-image: url('assets/images/3px-tile.png');">
     <div class="container-md bg-white px-0">
       <div class="row" style="height: 30px;">
         <div class="col pt-1">
-          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; all zoom and gloom</h5>
         </div>
         <div class="col pt-1 pr-4 text-right">
           <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
@@ -46,23 +41,13 @@ background-image: url('assets/images/3px-tile.png');">
         </div>
       </div>
       <div class="container bg-dark">
-        <div class="row video_windows">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/4/jan.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2"><img src="assets/images/4/dan.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2"><img src="assets/images/4/anne.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/4/stan.png" class="img-fluid"></div>
+        <div class="row">
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/3/m-fawlty1.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you2.png" class="img-fluid"></div>
         </div>
-        <div class="row video_windows">
-          <div class="col m-1 ml-2"><img src="assets/images/4/ken.png" class="img-fluid"></div>
-          <div class="col m-1"><img src="assets/images/4/glen.png" class="img-fluid"></div>
-          <div class="col m-1"><img src="assets/images/4/ben.png" class="img-fluid"></div>
-          <div class="col m-1 mr-2"><img src="assets/images/4/sven.png" class="img-fluid"></div>
-        </div>
-        <div class="row video_windows">
-          <div class="col m-1 mb-2"><img src="assets/images/4/finn.png" class="img-fluid"></div>
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/4/lynne.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2"><img src="assets/images/4/glynn.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/4/gwyn.png" class="img-fluid"></div>
+        <div class="row">
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/3/h-messi-room.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/3/c-shannon-staybull.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
@@ -94,25 +79,13 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1" id="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p class="modal-text">Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-sm" onclick="modalOkButtonPress()">OK</button>
-            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>    
     <div class="modal" tabindex="-1" id="chat-modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
             <div class="row">
               <div class="col" id="chat-history">
+                <div class="alert alert-info"><b>Heidi Messi-Room:&nbsp;</b>Mike's sound seems to be all scrambled, any idea what his latest amazing business idea is?</div>
               </div>
             </div>
             <div class="row">
@@ -133,24 +106,15 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
         </div>
       </div>
-    </div>   
+    </div>    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script>
     <script>
-      const sortable = new Draggable.Swappable(document.querySelectorAll('.video_windows'), {
-	    draggable: '.col',
-	    mirror: {
-	    	constrainDimensions: true
-	    }
-	  });
-
       function minimizeButtonPress(){
-
       }
       function maximizeButtonPress(){
       }
@@ -172,11 +136,13 @@ background-image: url('assets/images/3px-tile.png');">
         $('#chat-box').val('')
         $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
 
-        if (message.trim().toLowerCase() == "179676") {
-          $('#chat-modal').modal("hide")
-          showModal("Meeting escape activated, please confirm you want to exit this meeting?")
+        if (message.trim().toLowerCase() == "lockdown memorabilia") {
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Of course! He's a genius!</div>")
+          setTimeout(function () {
+            window.location = "innovate.html"
+          }, 3000);
         } else {
-          $('#chat-history').append("<div class='alert alert-info'><b>Glen:&nbsp;</b> This never-ending meeting was bad enough already, without your nonsense in the chat. (╯°□°）╯︵ ┻━┻</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Nah, I'm sure he's come up with something better than that.</div>")
 
         }
       }
@@ -185,11 +151,10 @@ background-image: url('assets/images/3px-tile.png');">
       function leaveMeetingButtonPress(){
       }
       function showModal(text){
-        $('#modal .modal-text').text(text);
-        $('#modal').modal()
+        $('.modal-text').text(text);
+        $('.modal').modal()
       }
       function modalOkButtonPress(){
-      	window.location = "5.html"
       }
     </script>
   </body>

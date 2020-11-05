@@ -24,7 +24,7 @@
       }
     </style>
 
-    <title>All Zoom and Gloom </title>
+    <title>all zoom and gloom</title>
   </head>
   <body style="background-color: #050300;
 background-image: url('assets/images/3px-tile.png');">
@@ -32,7 +32,7 @@ background-image: url('assets/images/3px-tile.png');">
     <div class="container-md bg-white px-0">
       <div class="row" style="height: 30px;">
         <div class="col pt-1">
-          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; all zoom and gloom</h5>
         </div>
         <div class="col pt-1 pr-4 text-right">
           <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
@@ -42,7 +42,7 @@ background-image: url('assets/images/3px-tile.png');">
       </div>
       <div class="container bg-dark">
         <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/3/m-fawlty1.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/3/m-fawlty.png" class="img-fluid"></div>
           <div class="col m-1 mt-2 mr-2"><img src="assets/images/you2.png" class="img-fluid"></div>
         </div>
         <div class="row">
@@ -85,7 +85,7 @@ background-image: url('assets/images/3px-tile.png');">
           <div class="modal-body">
             <div class="row">
               <div class="col" id="chat-history">
-                <div class="alert alert-info"><b>Heidi Messi-Room:&nbsp;</b>What is Mike suggesting now?</div>
+                <div class="alert alert-info"><b>Heidi Messi-Room (private message):&nbsp;</b>How is Mike solving 2020's big problems?</div>
               </div>
             </div>
             <div class="row">
@@ -136,13 +136,13 @@ background-image: url('assets/images/3px-tile.png');">
         $('#chat-box').val('')
         $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
 
-        if (message.trim().toLowerCase() == "lockdown memorabilia") {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Of course! He's a genius!</div>")
+        if (message.trim().toLowerCase() == "virtual toilet paper") {
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>That makes total sense, thanks!</div>")
           setTimeout(function () {
-            window.location = "3b.html"
+            window.location = "dine.html"
           }, 3000);
         } else {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Nah, I'm sure he's come up with something better than that.</div>")
+          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Hmm, that doesn't sound right.</div>")
 
         }
       }

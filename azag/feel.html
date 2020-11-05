@@ -24,7 +24,7 @@
       }
     </style>
 
-    <title>All Zoom and Gloom </title>
+    <title>all zoom and gloom</title>
   </head>
   <body style="background-color: #050300;
 background-image: url('assets/images/3px-tile.png');">
@@ -32,7 +32,7 @@ background-image: url('assets/images/3px-tile.png');">
     <div class="container-md bg-white px-0">
       <div class="row" style="height: 30px;">
         <div class="col pt-1">
-          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; All Zoom & Gloom</h5>
+          <h5><span class="text-white bg-info border">&nbsp;Z&nbsp;</span>&nbsp; all zoom and gloom</h5>
         </div>
         <div class="col pt-1 pr-4 text-right">
           <span class="text-secondary window-icon" onclick="minimizeButtonPress()"><i class="fas fa-window-minimize"></i></span>
@@ -42,12 +42,23 @@ background-image: url('assets/images/3px-tile.png');">
       </div>
       <div class="container bg-dark">
         <div class="row">
-          <div class="col m-1 mt-2 ml-2"><img src="assets/images/3/m-fawlty.png" class="img-fluid"></div>
-          <div class="col m-1 mt-2 mr-2"><img src="assets/images/you2.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2 ml-2"><img src="assets/images/feel/1.png" class="img-fluid"></div>
+          <div class="col m-1 mt-2">
+              <div style="background-image: url('assets/images/you.png'); background-size: contain; height: 100%;" id="you_square">
+                
+              </div>
+          </div>
+          <div class="col m-1 mt-2 mr-2"><img src="assets/images/feel/3.png" class="img-fluid"></div>
         </div>
         <div class="row">
-          <div class="col m-1 ml-2 mb-2"><img src="assets/images/3/h-messi-room.png" class="img-fluid"></div>
-          <div class="col m-1 mb-2 mr-2"><img src="assets/images/3/c-shannon-staybull.png" class="img-fluid"></div>
+          <div class="col m-1 ml-2"><img src="assets/images/feel/4.png" class="img-fluid"></div>
+          <div class="col m-1"><img src="assets/images/feel/5.png" class="img-fluid"></div>
+          <div class="col m-1 mr-2"><img src="assets/images/feel/6.png" class="img-fluid"></div>
+        </div>
+        <div class="row">
+          <div class="col m-1 ml-2 mb-2"><img src="assets/images/feel/7.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2"><img src="assets/images/feel/8.png" class="img-fluid"></div>
+          <div class="col m-1 mb-2 mr-2"><img src="assets/images/feel/9.png" class="img-fluid"></div>
         </div>
       </div>
       <div class="container" style="background-color: #262729;">
@@ -79,34 +90,48 @@ background-image: url('assets/images/3px-tile.png');">
           </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1" id="chat-modal">
+    <div class="modal" tabindex="-1" id="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <div class="row">
-              <div class="col" id="chat-history">
-                <div class="alert alert-info"><b>Heidi Messi-Room (private message):&nbsp;</b>Mike's sound seems to be all scrambled, any idea what his latest amazing business idea is?</div>
-              </div>
-            </div>
+            <p class="modal-text">Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalOkButtonPress()">OK</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <div class="modal" tabindex="-1" id="reactionPicker">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
             <div class="row">
               <div class="col">
-                <form onsubmit="return false;" autocomplete="off">
-                  <div class="form-row">
-                    <div class="col">
-                      <input type="text" class="form-control" id="chat-box" placeholder="Send a message">
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-primary" onclick="chatSendButtonPress()"><i class="fas fa-share-square"></i></button>
-                    </div>
-                  </div>
-                </form>
-
+                <img src="assets/images/feel/thumbUp.png" class="img-fluid"  onclick="reactionChoice('thumbUp')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/thumbDown.png" class="img-fluid"  onclick="reactionChoice('thumbDown')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/laugh.png" class="img-fluid"  onclick="reactionChoice('laugh')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/frown.png" class="img-fluid"  onclick="reactionChoice('frown')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/grin.png" class="img-fluid"  onclick="reactionChoice('grin')">
+              </div>
+              <div class="col">
+                <img src="assets/images/feel/cool.png" class="img-fluid"  onclick="reactionChoice('cool')">
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>    
+    </div>  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -114,6 +139,7 @@ background-image: url('assets/images/3px-tile.png');">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
+      var last_reactions = [];
       function minimizeButtonPress(){
       }
       function maximizeButtonPress(){
@@ -127,34 +153,42 @@ background-image: url('assets/images/3px-tile.png');">
       function pollsButtonPress(){
       }
       function reactionsButtonPress(){
+        $('#reactionPicker').modal()
+      }
+      function reactionChoice(name){
+        if (last_reactions.length > 2){
+          last_reactions.shift()
+        }
+        last_reactions.push(name)
+
+        desired_html = ""
+        for (i = 0, len = last_reactions.length; i < len; i++) {
+          desired_html += '<img src="assets/images/feel/' + last_reactions[i] +'.png" style="height: 40px;" class="px-1 pt-1">' ;
+        }
+        $('#you_square').html(desired_html)
+
+        $('#reactionPicker').modal('hide')
+
+        if (arraysEqual([...last_reactions].sort(), ["cool", "laugh", "thumbDown"])) {
+          showModal("Well done, you manage to gauge the appropriate reactions! Do you want to leave this meeting?")
+        }
+      }
+      function arraysEqual(a, b){
+        return a.length === b.length && a.every((val, index) => val === b[index])
+
       }
       function chatButtonPress(){
-        $('#chat-modal').modal()
-      }
-      function chatSendButtonPress(){
-        var message = $('#chat-box').val()
-        $('#chat-box').val('')
-        $('#chat-history').append("<div class='alert alert-secondary text-right'><b>You:&nbsp;</b>" + message + "</div>")
-
-        if (message.trim().toLowerCase() == "virtual toilet paper") {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>That makes total sense, thanks!</div>")
-          setTimeout(function () {
-            window.location = "3a.html"
-          }, 3000);
-        } else {
-          $('#chat-history').append("<div class='alert alert-info'><b>Heidi Messi-Room:&nbsp;</b>Hmm, that doesn't sound right.</div>")
-
-        }
       }
       function breakoutRoomsButtonPress(){
       }
       function leaveMeetingButtonPress(){
       }
       function showModal(text){
-        $('.modal-text').text(text);
-        $('.modal').modal()
+        $('#modal .modal-text').text(text);
+        $('#modal').modal()
       }
       function modalOkButtonPress(){
+        window.location = "graph.html"
       }
     </script>
   </body>
