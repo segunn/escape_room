@@ -39,7 +39,7 @@
       </div>
       <div class="form-row mt-3 pb-3">
         <div class="col">
-            <input class="form-control" id="answer-box" placeholder="Answer here...">
+            <input class="form-control" id="answer-box" placeholder="Answer the snowmen here...">
         </div>
         <div class="col">
           <button onClick="submitButtonPress()" class="btn btn-info">></button>
@@ -58,7 +58,7 @@
         var message = $('#answer-box').val().trim().toLowerCase()
         if (message == "rangdo" || message == "the rangdo") {
           setTimeout(function () {
-            window.location = "TODO.html"
+            window.location = "walk_intro.html"
           });
         } else {
           $('#answer-box').val('')
