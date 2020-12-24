@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:url"                content="https://segunn.github.io/escape_room/fnrad/index.html" />
+    <meta property="og:title"              content="Christmas" />
+    <meta property="og:description"        content="Celebrating Christmas, virtually" />
+    <meta property="og:image"              content="https://segunn.github.io/escape_room/fnrad_screenshot.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="assets/css/font_awesome_all.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <title>Virtual Christmas</title>
+  </head>
+  <body class="bg-secondary">
+    <div class="container-md">
+      <div class="row">
+        <div class="col pt-5">
+          <img class="img-fluid" src="./assets/img/sprouts.jpg">
+        </div>
+      </div>
+      <div class="row bg-light mt-3">
+        <div class="col">
+          <img class="img-fluid" src="./assets/img/gifts.png">
+        </div>
+      </div>
+     <div class="row bg-light">
+        <div class="col">
+          <ul>
+            <li>The spare loo roll was grouped with the Green Triangle</li>
+            <li>The sprout that won the spotty present weighed more than the sprout which won the Strawberry Delight</li>
+            <li>Of the prize wrapped in stars, and the CD of Rick Astley's Greatest Hits, one had a Green Triangle and the other was won with a 15g sprout.</li>
+            <li>The prize with plain wrapping was won by a sprout 15g heavier than the one which won the Orange Creme</li>
+            <li>The prize with the Green Triangle was won by a sprout that weighed 15g less than the one which won a "Learn to play Air Guitar" kit</li>
+            <li>Neither the winner of the Rick Astley CD nor the competitor with the 60g sprout was lucky enough to win the Strawberry Delight</li>
+          </ul>
+        </div>
+      </div>      
+      <div class="row bg-light pb-2">
+        <div class="col">
+              <select class="form-control" id="wrapping">
+                  <option value="">Select wrapping...</option>
+                  <option value="stripes">Stripes</option>
+                  <option value="stars">Stars</option>
+                  <option value="spots">Spots</option>
+                  <option value="plain">Plain</option>
+              </select>
+          </div>
+          <div class="col">
+              <select class="form-control" id="choc">
+                  <option value="">Select Quality St...</option>
+                  <option value="strawberry">Strawberry Delight</option>
+                  <option value="toffee">Toffee Penny</option>
+                  <option value="orange">Orange Creme</option>
+                  <option value="green">The Green Triangle</option>
+              </select>
+          </div>    
+          <div class="col">
+              <select class="form-control" id="weight"> 
+                  <option value="">Select sprout weight...</option>
+                  <option value="15">15g</option>
+                  <option value="30">30g</option>
+                  <option value="45">45g</option>
+                  <option value="60">60g</option>
+              </select>
+          </div>        
+          <div class="col">
+            <button onClick="submitButtonPress()" class="btn btn-info">></button>
+          </div>              
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+      function submitButtonPress(){
+        var wrapping = $('#wrapping').val()
+        var choc = $('#choc').val()
+        var weight = $('#weight').val()
+
+        if ( wrapping == "plain" && choc == "strawberry" && weight == "30") {
+            window.location = "todo.html"
+        } else {
+          alert("Sorry, that's not correct")
+        }
+        return false
+      }
+    </script>
+  </body>
+</html>
