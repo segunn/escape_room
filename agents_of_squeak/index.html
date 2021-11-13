@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en"
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Agents of Squeak</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h1>Agents of Squeak</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h2>Phase 1</h2>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-primary" onclick="$('#1ALocationModal').modal();">
+                    Clue A - Location
+                </button>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-primary" onclick="$('#1AModal').modal();">
+                    Clue A - Solution
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-info" onclick="$('#1BLocationModal').modal();">
+                    Clue B - Location
+                </button>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-info"  onclick="$('#1BModal').modal();">
+                    Clue B - Solution
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-success" onclick="$('#1CLocationModal').modal();">
+                    Clue C - Location
+                </button>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-success"  onclick="$('#1CModal').modal();">
+                    Clue C - Solution
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h2>Phase 2</h2>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-warning" onclick="$('#2AModal').modal();">
+                    Silhouettes - Solution
+                </button>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-warning"  onclick="$('#2BModal').modal();">
+                    Ott & Orf - Solution
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-sm-12">
+                <h2>Phase 3</h2>
+            </div>
+            <div class="col-4 offset-1">
+                <button type="button" class="btn btn-danger" onclick="$('#3Modal').modal();">
+                    Activate! - Solution
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="1ALocationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1ALocationModal',['blandfordst&manchesterst', 'blandfordstmanchesterst','blandfordstandmanchesterst'], ['blandfordst', 'manchesterst'])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="1AModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1AModal', ['130'], [])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="1BLocationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1BLocationModal',['wallacecollectionboudoir', 'wallacecollection'], ['boudoir'])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="1BModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1BModal',['435'], ['thedeadmouse', 'boilly'])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="modal fade" id="1CLocationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1CLocationModal',['boltrobotsyappy', 'bolt.robots.yappy'], ['bolt', 'robots', 'yappy'])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="1CModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#1CModal',['181'], [])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="2AModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#2AModal',['giantrobotgigawattiron'],[])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <div class="modal fade" id="2BModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#2BModal',['timetravellingpestcontrol', 'timetravellingpestcontrol@gmail.com'], [])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>     
+
+<div class="modal fade" id="3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Answer checker</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Your answer:
+            </p>
+            <div class="row">
+                <div id="answer" class="ml-3">
+                    <input class="form-control">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('#3Modal',['264','twosixfour'], [])">Check Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>          
+
+    <script>
+
+        function checkAnswer(modal, answers, close){
+            their_val = $(modal + ' #answer input').val().trim().toLowerCase().replace(/\s/g, '')
+            if ( $.inArray(their_val, answers) !== -1 ) {
+                alert("Great Scott! You've done it!")
+            } else if ( $.inArray(their_val, close) !== -1 ) {
+                    alert("That's close...")
+            } else {
+                alert("That doesn't look right")
+            }
+        }
+    
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
