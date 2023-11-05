@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Penguigma</title>
+    <link rel="stylesheet" type="text/css" href="assets/penguins.css">
+</head>
+<body>
+    <!-- <div class="imgbox">
+	    <img class="center-fit" src='assets/enigma.jpeg'>
+	</div> -->
+	<br>
+	<p class='has-dropcap'>You've found the Penguins' encryption device. If you could <em>just</em> find the right rotation of the dials, you're sure it would display a more helpful message.</p>
+
+	<br>
+
+    <div class="enigma_machine">
+        <div class="header">
+            <h1>PENGUIGMA MACHINE</h1>
+        </div>
+        <div class="spinners">
+            <img src="assets/enigma_spinner.png" id="spinA" 
+                data-rotation="180" style="transform: rotate(180deg)"
+                onclick="spinIt('spinA')">
+            <img src="assets/enigma_spinner.png" id="spinB" 
+                data-rotation="180" style="transform: rotate(180deg)"
+                onclick="spinIt('spinB')">
+            <img src="assets/enigma_spinner.png" id="spinC" 
+                data-rotation="180" style="transform: rotate(180deg)"
+                onclick="spinIt('spinC')">
+        </div>
+        
+        <div id="message_display">
+            <p id="msg_p">
+                ...
+            </p>
+        </div>
+    </div>
+
+
+	
+
+</body>
+<script>
+    function spinIt(imageId) {
+        const spinner = document.getElementById(imageId)
+        spinner.dataset.rotation = parseInt(spinner.dataset.rotation) + 15
+        if (spinner.dataset.rotation > 360) {
+            spinner.dataset.rotation -= 360
+        }
+        spinner.style.transform = "rotate("+spinner.dataset.rotation+"deg)";
+        updateEncodedText()
+    }
+
+    function addNToLetter(n, x) {
+        if (x == "." || x == " ")  {
+            return x
+        } else {
+            let x_ord = x.charCodeAt(0)
+            let new_ord = x_ord + n
+            if (new_ord > 90) {
+                new_ord -= 26
+            }
+            return String.fromCharCode(new_ord)
+        }
+    }
+
+    // Spinner A adds n to each letter in the string
+    function applyA(text, rotation){
+        var new_text = ""
+        let diff = 2 + rotation / 15  // TODO: change the 2 to get the value we want
+        for (let j = 0; j < text.length; j++) {
+            new_text += addNToLetter(diff, text.charAt(j))
+        }
+        return new_text
+    }
+
+    // Spinner B loops through a list of numbers, adding n to each letter
+    function applyB(text, rotation){
+        var new_text = ""
+        let diff = (rotation / 15) % 24
+        let word_to_add = [ // TODO put the zeroes in the right place
+            [14,17,19], [4,5,21], [6,8,17],
+            [15,23,12], [14,8,13], [9,8,7], 
+            [6,2,1], [0,0,0], [3,12,16],
+            [4,19,10], [5,15,25], [7,17,1],
+            [24,17,19], [10,5,22], [6,8,17],
+            [25,13,22], [24,8,23], [19,18,17], 
+            [16,12,0], [20,20,20], [3,22,0],
+            [4,14,20], [5,25,25], [7,1,2],
+        ][diff]
+
+        for (let j = 0; j < text.length; j++) {
+            new_text += addNToLetter(word_to_add[j % 3], text.charAt(j))
+        }
+        return new_text
+    }    
+
+    function applyC(text, rotation){
+        var new_text = ""
+        let diff = (rotation / 15) % 24
+        let word_to_add = [ // TODO put the zeroes in the right place
+            [12, 24, 18, 6, 25],
+            [20, 8, 17, 23, 5],
+            [9, 15, 3, 22, 14],
+            [19, 4, 7, 11, 25],
+            [14, 23, 25, 1, 10],
+            [0,0,0,0,0],
+            [2, 13, 16, 25, 7],
+            [24, 25, 12, 20, 3],
+            [6, 19, 25, 8, 15],
+            [25, 18, 22, 13, 5],
+            [3, 11, 17, 4, 9],
+            [10, 1, 25, 16, 2],
+            [7, 14, 25, 24, 10],
+            [8, 25, 21, 12, 16],
+            [25, 3, 18, 11, 7],
+            [4, 20, 25, 13, 5],
+            [19, 25, 9, 17, 2],
+            [25, 6, 14, 1, 22],
+            [10, 15, 23, 25, 8],
+            [25, 12, 25, 16, 4],
+            [25, 7, 25, 25, 11],
+            [6, 25, 25, 5, 3],
+            [25, 10, 19, 25, 18],
+            [22, 25, 2, 9, 25],
+        ][diff]
+
+        for (let j = 0; j < text.length; j++) {
+            new_text += addNToLetter(word_to_add[j % 5], text.charAt(j))
+        }
+        return new_text
+    }    
+
+    function updateEncodedText() {
+        var text = "THE WORD YOU SEEK CAN BE FOUND DEEP INSIDE. ILLUMINATE YOUR MASCOT AND IT WILL PROVIDE."
+
+        const spinnerA = document.getElementById("spinA")
+        var rotation = parseInt(spinnerA.dataset.rotation)
+        text = applyA(text, rotation)
+
+        const spinnerB = document.getElementById("spinB")
+        rotation = parseInt(spinnerB.dataset.rotation)
+        text = applyB(text, rotation)
+
+        const spinnerC = document.getElementById("spinC")
+        rotation = parseInt(spinnerC.dataset.rotation)
+        text = applyC(text, rotation)
+
+        document.getElementById("msg_p").innerText = text
+    }
+</script>
+</html>
