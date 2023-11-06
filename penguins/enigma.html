@@ -45,7 +45,7 @@
 <script>
     function spinIt(imageId) {
         const spinner = document.getElementById(imageId)
-        spinner.dataset.rotation = parseInt(spinner.dataset.rotation) + 15
+        spinner.dataset.rotation = parseInt(spinner.dataset.rotation) + 30
         if (spinner.dataset.rotation > 360) {
             spinner.dataset.rotation -= 360
         }
@@ -69,7 +69,7 @@
     // Spinner A adds n to each letter in the string
     function applyA(text, rotation){
         var new_text = ""
-        let diff = 2 + rotation / 15  // TODO: change the 2 to get the value we want
+        let diff = (25 + rotation / 30) % 26
         for (let j = 0; j < text.length; j++) {
             new_text += addNToLetter(diff, text.charAt(j))
         }
@@ -79,16 +79,13 @@
     // Spinner B loops through a list of numbers, adding n to each letter
     function applyB(text, rotation){
         var new_text = ""
-        let diff = (rotation / 15) % 24
-        let word_to_add = [ // TODO put the zeroes in the right place
-            [14,17,19], [4,5,21], [6,8,17],
+        let diff = (rotation / 30) % 12
+        console.log(diff)
+        let word_to_add = [ 
+            [0,0,0], [14,17,19], [4,5,21], 
             [15,23,12], [14,8,13], [9,8,7], 
-            [6,2,1], [0,0,0], [3,12,16],
+            [6,2,1], [3,12,16], [6,8,17],
             [4,19,10], [5,15,25], [7,17,1],
-            [24,17,19], [10,5,22], [6,8,17],
-            [25,13,22], [24,8,23], [19,18,17], 
-            [16,12,0], [20,20,20], [3,22,0],
-            [4,14,20], [5,25,25], [7,1,2],
         ][diff]
 
         for (let j = 0; j < text.length; j++) {
@@ -99,32 +96,20 @@
 
     function applyC(text, rotation){
         var new_text = ""
-        let diff = (rotation / 15) % 24
-        let word_to_add = [ // TODO put the zeroes in the right place
+        let diff = (rotation / 30) % 12
+        let word_to_add = [ 
             [12, 24, 18, 6, 25],
             [20, 8, 17, 23, 5],
             [9, 15, 3, 22, 14],
             [19, 4, 7, 11, 25],
             [14, 23, 25, 1, 10],
-            [0,0,0,0,0],
             [2, 13, 16, 25, 7],
             [24, 25, 12, 20, 3],
             [6, 19, 25, 8, 15],
             [25, 18, 22, 13, 5],
             [3, 11, 17, 4, 9],
             [10, 1, 25, 16, 2],
-            [7, 14, 25, 24, 10],
-            [8, 25, 21, 12, 16],
-            [25, 3, 18, 11, 7],
-            [4, 20, 25, 13, 5],
-            [19, 25, 9, 17, 2],
-            [25, 6, 14, 1, 22],
-            [10, 15, 23, 25, 8],
-            [25, 12, 25, 16, 4],
-            [25, 7, 25, 25, 11],
-            [6, 25, 25, 5, 3],
-            [25, 10, 19, 25, 18],
-            [22, 25, 2, 9, 25],
+            [0,0,0,0,0],
         ][diff]
 
         for (let j = 0; j < text.length; j++) {
@@ -139,14 +124,17 @@
         const spinnerA = document.getElementById("spinA")
         var rotation = parseInt(spinnerA.dataset.rotation)
         text = applyA(text, rotation)
+        // console.log(text)
 
         const spinnerB = document.getElementById("spinB")
         rotation = parseInt(spinnerB.dataset.rotation)
         text = applyB(text, rotation)
+        // console.log(text)
 
         const spinnerC = document.getElementById("spinC")
         rotation = parseInt(spinnerC.dataset.rotation)
         text = applyC(text, rotation)
+        // console.log(text)
 
         document.getElementById("msg_p").innerText = text
     }
