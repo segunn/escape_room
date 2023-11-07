@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hungry Hungry Penguins</title>
+    <link rel="stylesheet" type="text/css" href="assets/penguins.css">
+</head>
+<body>
+    <div class="imgbox">
+	    <img class="center-fit" src='assets/spy.jpeg'>
+	</div>
+	<br>
+	<p class='has-dropcap'>Agent Flippers has infiltrated the Penguins' secret plaices. He's also signed the Of-fish-ial Secrets Act. Listen carefully to him... He won't tell you anything unless you know the secret codword.</p>
+
+	<br>
+
+    <div class="fish_tank">
+        <div class="fish_wrapper"><img src="assets/fishA.svg" id="fishA" 
+            onclick="feedHim('fishA')"></div>
+        <div class="fish_wrapper"><img src="assets/fishB.png" id="fishB" 
+            onclick="feedHim('fishB')"></div>
+        <div class="fish_wrapper"><img src="assets/fishC.png" id="fishC" 
+            onclick="feedHim('fishC')"></div>
+        <div class="fish_wrapper"><img src="assets/fishD.png" id="fishD" 
+            onclick="feedHim('fishD')"></div>
+        <div class="fish_wrapper"><img src="assets/fishE.png" id="fishE" 
+            onclick="feedHim('fishE')"></div>
+    </div>
+
+
+
+</body>
+    <script>
+        const all_fish = ["fishC","fishA", "fishB", "fishE","fishD"]
+        fish = ["fishA", "fishB", "fishC", "fishD", "fishE"]
+        usage_order = []
+
+        function feedHim(fishId) {
+            console.log(fishId)
+            console.log(fish)
+            if (fish.includes(fishId)) {
+                // remove it from the list
+                var index = fish.indexOf(fishId)
+                fish.splice(index, 1)
+                // hide the fish
+                const myfish = document.getElementById(fishId)
+                myfish.style.visibility = "hidden"
+                // record usage
+                usage_order.push(fishId)
+                // play relevant recording
+                var audio = new Audio("assets/" + fishId + ".wav")
+                audio.play()
+            }
+
+            if (fish.length == 0) {
+                if (JSON.stringify(usage_order) == JSON.stringify(all_fish)) {
+                    setTimeout(function() {
+                        var audio = new Audio("assets/cod6.wav")
+                        audio.play()
+                    }, 4000)
+                } else {
+                    fish = [...all_fish] // clone it
+                    usage_order = []
+                    // show them all again
+                    fish.forEach(element => {
+                        const myfish = document.getElementById(element)
+                        myfish.style.visibility = "visible"
+                    });
+                }
+            }
+        }
+    </script>
+</html>

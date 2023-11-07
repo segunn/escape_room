@@ -46,3 +46,16 @@
         font-family: "Lucida Console", "Courier New", monospace;
     }    
 }
+
+.fish_tank {
+
+    .fish_wrapper {
+        width: 18%;
+        display: inline;
+    }
+
+    .fish_wrapper img {
+        width: 18%;
+        display: inline;
+    }    
+}
