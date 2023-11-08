@@ -79,3 +79,73 @@
         text-align: left;
     }    
 }
+
+.secret_vault {
+    border: 3px solid black;
+    margin: 5px;
+    background-color: silver;
+
+    .header {
+        margin: auto;
+        text-align: center;
+        color: darkred;
+        /* font-family: "Lucida Console", "Courier New", monospace; */
+    }
+
+    .keys {
+        background-color: grey;
+        border: 3px solid black;
+        margin: 5px;
+        display: block;
+    }
+
+    .input-container {
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      
+    /* Style the form icons */
+    .icon {
+        padding: 10px;
+        background: grey;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .red {
+        color: darkred;
+    }
+    .green {
+        color: lightgreen;
+    }
+    
+    /* Style the input fields */
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        outline: none;
+    }
+    
+    .input-field:focus {
+        border: 2px solid darkred;
+    }
+
+    #message_display {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-top: 3px solid black;
+        padding: 5px;
+        background-color: black;
+        color: lightgreen;
+    }
+
+    #message_display p {
+        padding: 3px;
+        font-family: "Lucida Console", "Courier New", monospace;
+    }    
+}

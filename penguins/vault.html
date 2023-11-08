@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vault</title>
+    <link rel="stylesheet" type="text/css" href="assets/penguins.css">
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+	<br>
+	<p>The Penguins' vault is so secure that 4 passwords are required to open it. You'll find one password by completing each of the missions set by the INTERPOLE agents. </p>
+    
+    <div class="secret_vault">
+        <div class="header">
+            <h1>TOP SECRET VAULT</h1>
+        </div>
+        <div class="keys">
+            <div class="input-container">
+                <i class="fa fa-question icon fa-xl"></i>
+                <input class="input-field" type="text" placeholder="PASSWORD 1"  name="keyA">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+            
+              <div class="input-container">
+                <i class="fa fa-hotel icon fa-xl"></i>
+                <input class="input-field" type="text" placeholder="PASSWORD 2" name="keyB">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+            
+              <div class="input-container">
+                <i class="fa fa-snowflake icon fa-xl"></i>
+                <input class="input-field" type="text" placeholder="PASSWORD 3" name="keyC">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+
+              <div class="input-container">
+                <i class="fa fa-life-ring icon fa-xl"></i>
+                <input class="input-field" type="text" placeholder="PASSWORD 4" name="keyD">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+      
+        </div>
+        
+        <div id="message_display">
+            <p id="msg_p">
+                THE VAULT IS LOCKED
+            </p>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    // TODO
+    // if correct change to fa-unlock with class .green
+</script>
+</html>
