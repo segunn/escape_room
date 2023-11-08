@@ -3,29 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hungry Hungry Penguins</title>
+	<title>Agent Flippers' Codphrases</title>
     <link rel="stylesheet" type="text/css" href="assets/penguins.css">
 </head>
 <body>
-    <div class="imgbox">
-	    <img class="center-fit" src='assets/spy.jpeg'>
-	</div>
-	<br>
-	<p class='has-dropcap'>Agent Flippers has infiltrated the Penguins' secret plaices. He's also signed the Of-fish-ial Secrets Act. Listen carefully to him... He won't tell you anything unless you know the secret codword.</p>
+	<p>
+        Agent Flippers has infiltrated the Penguins' secret plaices. He's also signed the Of-fish-ial Secrets Act. 
+        He won't tell you anything unless you give the correct responses to each of his secret codphrases.
+    </p>
 
-	<br>
+    <div class="chat">
+        <div id="chat-content">
+
+        </div>
+    </div>
+    <button onclick="initChat()">Start again</button>
 
     <div class="fish_tank">
         <div class="fish_wrapper"><img src="assets/fishA.svg" id="fishA" 
-            onclick="feedHim('fishA')"></div>
+            onclick="feedHim('fishA')"
+            data-codphrase="Indeed, the northern lights dance in the skies."></div>
         <div class="fish_wrapper"><img src="assets/fishB.png" id="fishB" 
-            onclick="feedHim('fishB')"></div>
+            onclick="feedHim('fishB')"
+            data-codphrase="I've heard the snow falls upwards when the night is darkest."></div>
         <div class="fish_wrapper"><img src="assets/fishC.png" id="fishC" 
-            onclick="feedHim('fishC')"></div>
+            onclick="feedHim('fishC')" 
+            data-codphrase="In the tundra, the mighty tundra, the walrus sleeps tonight."></div>
         <div class="fish_wrapper"><img src="assets/fishD.png" id="fishD" 
-            onclick="feedHim('fishD')"></div>
+            onclick="feedHim('fishD')"
+            data-codphrase="And my bobsled has been struck by lightning."></div>
         <div class="fish_wrapper"><img src="assets/fishE.png" id="fishE" 
-            onclick="feedHim('fishE')"></div>
+            onclick="feedHim('fishE')"
+            data-codphrase="You make an excellent point. Or six."></div>
     </div>
 
 
@@ -33,42 +42,67 @@
 </body>
     <script>
         const all_fish = ["fishC","fishA", "fishB", "fishE","fishD"]
-        fish = ["fishA", "fishB", "fishC", "fishD", "fishE"]
+        const prompts = [
+            "Welcome to the arctic tundra.",
+            "They say the permafrost is pleasant in spring.",
+            "Unlike the long polar winter, when all is gloom.",
+            "At least every snowflake is special and unique.",
+            "My snowmobile is full of eels.",
+        ]
+
+        available_fish = ["fishA", "fishB", "fishC", "fishD", "fishE"]
         usage_order = []
 
+        function showMessage(msg){
+            const chatbox = document.getElementById("chat-content")
+            const new_div = document.createElement("div")
+            new_div.innerText = msg
+            new_div.className = "message"
+            chatbox.append(new_div)
+        }
+
+        function initChat(){
+            available_fish = [...all_fish] // clone it
+            usage_order = []
+            // show them all again
+            available_fish.forEach(element => {
+                const myfish = document.getElementById(element)
+                myfish.style.visibility = "visible"
+            });
+            // clear chat
+            const chatbox = document.getElementById("chat-content")
+            chatbox.innerHTML = null
+            showMessage("Agent F: " + prompts[0])
+        }
+
         function feedHim(fishId) {
-            console.log(fishId)
-            console.log(fish)
-            if (fish.includes(fishId)) {
+            if (available_fish.includes(fishId)) {
                 // remove it from the list
-                var index = fish.indexOf(fishId)
-                fish.splice(index, 1)
+                var index = available_fish.indexOf(fishId)
+                available_fish.splice(index, 1)
                 // hide the fish
                 const myfish = document.getElementById(fishId)
                 myfish.style.visibility = "hidden"
                 // record usage
                 usage_order.push(fishId)
-                // play relevant recording
-                var audio = new Audio("assets/" + fishId + ".wav")
-                audio.play()
+                // show next prompt
+                showMessage(myfish.dataset.codphrase)
+                setTimeout(function(){
+                    if (usage_order.length < 5){
+                        showMessage("Agent F: " + prompts[usage_order.length])
+                    }
+                }, 500)
             }
 
-            if (fish.length == 0) {
+            if (available_fish.length == 0) {
                 if (JSON.stringify(usage_order) == JSON.stringify(all_fish)) {
-                    setTimeout(function() {
-                        var audio = new Audio("assets/cod6.wav")
-                        audio.play()
-                    }, 4000)
+                    showMessage("Agent F: Ah good, it's you. One can't be too careful these days. Go to the corner of Percival St and Malta St to continue your mission - good luck!")
                 } else {
-                    fish = [...all_fish] // clone it
-                    usage_order = []
-                    // show them all again
-                    fish.forEach(element => {
-                        const myfish = document.getElementById(element)
-                        myfish.style.visibility = "visible"
-                    });
+                    showMessage("Agent F: I'm sorry, I don't think I know you. Have an ice day.")
                 }
             }
         }
+
+        initChat()
     </script>
 </html>

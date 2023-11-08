@@ -59,3 +59,23 @@
         display: inline;
     }    
 }
+
+#chat-content {
+    background-color: lightgrey;
+    border: 2px solid black;
+    padding: 3px;
+
+    .message:nth-child(even) {
+        color: green;
+        margin-top: 2px;
+        margin-bottom: 5px;
+        text-align: right;
+    }
+
+    .message:nth-child(odd) {
+        color: black;
+        margin-top: 2px;
+        margin-bottom: 5px;
+        text-align: left;
+    }    
+}
