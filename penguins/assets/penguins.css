@@ -149,3 +149,9 @@
         font-family: "Lucida Console", "Courier New", monospace;
     }    
 }
+
+.note {
+    background-color: beige;
+    font: grey;
+    font-family: cursive;
+}
