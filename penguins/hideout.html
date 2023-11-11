@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hideout</title>
+    <link rel="stylesheet" type="text/css" href="assets/penguins.css">
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+	<br>
+	<p>We've finally tracked down the penguin hideout, but can you decode their slogan and unlock the door?</p>
+    
+    <div class="secret_vault">
+        <div class="header">
+            <h1>SUPER SUBTLE PENGUIN HIDEOUT</h1>
+        </div>
+        <div class="keys">
+            <div class="input-container" id="keyA">
+                <i class="fa fa-1 icon fa-xl"></i>
+                <input onchange="checkAnswer(this)" class="input-field" 
+                    type="text" data-answer="ADAMANT" 
+                    placeholder="WORD 1" name="keyA" id="input_keyA">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+            
+              <div class="input-container" id="keyB">
+                <i class="fa fa-2 icon fa-xl"></i>
+                <input onchange="checkAnswer(this)" class="input-field" 
+                    type="text" data-answer="ON" 
+                    placeholder="WORD 2" name="keyB" id="input_keyB">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+            
+              <div class="input-container" id="keyC">
+                <i class="fa fa-3 icon fa-xl"></i>
+                <input onchange="checkAnswer(this)" class="input-field" 
+                    type="text" data-answer="ADVANTAGE" 
+                    placeholder="WORD 3" name="keyC" id="input_keyC">
+                <i class="fa fa-lock icon fa-xl red"></i>
+              </div>
+      
+        </div>
+        
+        <div id="message_display">
+            <p id="msg_p">
+                THE DOOR IS LOCKED
+            </p>
+        </div>
+    </div>
+
+    <div id="openVault" style="visibility: hidden;">
+        <div class="imgbox">
+            <img class="center-fit" src='assets/locked_away.jpeg'>
+        </div>
+        <p>
+            You did it! The Penguins are safely locked up and the world can breathe easy. Our cleaning materials are safe, and Taskforce 2024 can go ahead.
+        </p>
+        <p>
+            WhatsApp Sarah "OCTOPUS" to lock in your finish time.
+        </p>
+    </div>
+
+</body>
+<script>
+    function checkAnswer(elt) {
+        const value = elt.value
+        const input_field = document.getElementById(elt.id)
+        const expected = input_field.dataset.answer
+
+        if ( value.toUpperCase() == expected ) {
+            unlock(elt.name)
+        } else {
+            lock(elt.name)
+        }
+
+        checkIfAllDone()
+    } 
+
+    function lock(id) {
+        const key = document.getElementById(id);
+        const keyicon = key.querySelector(".fa-unlock")
+        if (keyicon != null) {
+            keyicon.classList.add("fa-lock")
+            keyicon.classList.add("red")
+            keyicon.classList.remove("fa-unlock")
+            keyicon.classList.remove("green")
+        }
+    }
+
+    function unlock(id) {
+        const key = document.getElementById(id);
+        const keyicon = key.querySelector(".fa-lock")
+        if (keyicon != null) {
+            keyicon.classList.add("fa-unlock")
+            keyicon.classList.add("green")
+            keyicon.classList.remove("fa-lock")
+            keyicon.classList.remove("red")
+        }
+    }
+
+    function checkIfAllDone(){
+        const solved = document.getElementsByClassName("fa-unlock").length
+        const message_display = document.getElementById("msg_p")
+        if (solved == 0) {
+            message_display.innerHTML = "THE HIDEOUT IS LOCKED"
+        } else if (solved == 3) {
+            message_display.innerHTML = "THE HIDEOUT IS OPEN"
+            const soln = document.getElementById("openVault")
+            soln.style.visibility = "visible";
+        } else {
+            message_display.innerHTML = "THE HIDEOUT IS LOCKED - " + solved + "/3 words entered"
+        }
+    }
+</script>
+</html>
