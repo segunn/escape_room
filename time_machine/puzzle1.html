@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Sparkford!</title>
+    <style>
+        body {
+            background-color: #293132;
+            color: #DDE2C6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #A72608;
+        }
+        p {
+            font-style: italic;
+            color: #BBC5AA;
+        }
+        .content-section {
+            border: 1px solid #4F5165;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #BBC5AA;
+        }
+        .content-section p {
+            color: #293132;
+        }
+        .answer-checker {
+            margin-top: 20px;
+        }
+        .submit-button {
+            background-color: #A72608;
+            color: #DDE2C6;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .video-container video {
+            max-width: 95vw; 
+            max-height: 95vh; 
+            } 
+
+            details {
+                margin-top: 15px;
+            }
+
+        .card {
+            min-width: 90%;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #4F5165;
+            padding: 10px;
+            margin: 0;
+            text-align: left;
+            vertical-align: middle;
+            max-height: 50px;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            max-height: 50px;
+            max-width: 50px;
+        }    
+        .card b {
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 20px;
+        }        
+    </style>
+</head>
+<body>
+    <div class="card no-bg" onclick="location='index.html'">
+        <img src="./assets/time-machine.jpg" alt="Time machine">  <b><< Back to index</b>
+    </div>
+    <h1>5000 BC: make it count</h1>
+    <p>Life in the Stone Age was simple. No words, no maths. But here in the .. *taps a rock 21 times*...st century, there's a lot more numbers to <b>coordinate</b>. I'll try to send you to the right location...</p>
+    
+    <div class="video-container">
+        <video controls height="100%">
+            <source src="assets/bc5000.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <details>
+        <summary>Hint1</summary>
+        You're looking for a set of coordinates in decimal degrees
+    </details>
+
+    <details>
+        <summary>Hint2</summary>
+        Google Maps sometimes mangles coordinate formats, using <a href="https://gps-coordinates.net">https://gps-coordinates.net</a> might be easier
+    </details>   
+    
+    <details>
+        <summary>Hint 3</summary>
+        That bit where the colours go weird looks a bit like a photographic negative.
+    </details>     
+
+    <p>When you get there, you can solve this:</p>
+
+    <div class="content-section">
+        <p>TODO puzzle goes here</p>
+        <img src="your-image-file.jpg" alt="Sample Image" style="width:100%; height:auto;">
+    </div>
+
+
+    <p>You can check your answer here:</p>
+    <div class="answer-checker">
+        <input type="text" id="answer" placeholder="The part we need is...">
+        <button class="submit-button" onclick="checkAnswer()">Check</button>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value.toLowerCase().replace(/[^\w]/g, '');
+            if (userAnswer === 'todo') {
+                alert('That is correct! Write it down somewhere, you\'ll need it to fix the time machine...');
+            } else {
+                alert('Try again!');
+            }
+        }
+    </script>
+
+</body>
+</html>

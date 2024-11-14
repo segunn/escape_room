@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Sparkford!</title>
+    <style>
+        body {
+            background-color: #293132;
+            color: #DDE2C6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #BBC5AA;
+        }
+        p {
+            font-style: italic;
+        }
+        .card {
+            min-width: 90%;
+            transition: transform 0.5s ease;
+            text-align: center;
+            background-color: #4F5165;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .no-bg {
+            background-color: #293132;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            max-height: 50px;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .no-bg img {
+            max-height: 50px;
+            max-width: 50px;
+        }
+        .button {
+            background-color: #A72608;
+            color: #DDE2C6;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .big-btn {
+            min-width: 90%;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #4F5165;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Can you fix the time machine?</h1>
+    <p>Going to the Stone Age was a step too far, and the Sparkford time machine has broken down. People from all the times we've visited have got stuck in 21st century Somerset.</p>
+    <p>Each person will give you a clue to a location. When you get to the location, solve the puzzle to find out one of the parts we'll need to fix the time machine.</p>
+
+    <h2>Step 1: Find the Parts</h2>
+    <div class="card" onclick="location='puzzle3.html'">
+            <img src="./assets/ad0800.jpg" alt="Card ad0800">
+            <h3>800AD</h3>
+    </div>
+    <div class="card" onclick="location='puzzle2.html'">
+            <img src="./assets/bc0200.jpg" alt="Card bc0200">
+            <h3>200BC</h3>
+    </div>
+    <div class="card" onclick="location='puzzle7.html'">
+        <img src="./assets/ad1982.jpg" alt="Card ad1982">
+        <h3>1982AD</h3>
+    </div> 
+    <div class="card" onclick="location='puzzle4.html'">
+            <img src="./assets/ad1300.jpg" alt="Card ad1300">
+            <h3>1300AD</h3>
+    </div>
+    <div class="card" onclick="location='puzzle5.html'">
+            <img src="./assets/ad1870.jpg" alt="Card ad1870">
+            <h3>1870AD</h3>
+    </div>
+    <div class="card" onclick="location='puzzle1.html'">
+            <img src="./assets/bc5000.jpg" alt="Card bc5000">
+            <h3>5000BC</h3>
+    </div>
+    <div class="card" onclick="location='puzzle6.html'">
+            <img src="./assets/ad1923.jpg" alt="Card ad1923">
+            <h3>1923AD</h3>
+    </div>
+
+    <h2>Step 2: Use the Parts</h2>
+    <button class="button big-btn" onclick="openModal()"><h3>Fix the Time Machine</h3></button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Enter the Parts</h2>
+            <input type="text" id="input1"><br>
+            <input type="text" id="input2"><br>
+            <input type="text" id="input3"><br>
+            <input type="text" id="input4"><br>
+            <input type="text" id="input5"><br>
+            <input type="text" id="input6"><br>
+            <input type="text" id="input7"><br>
+            <button class="button" onclick="checkAnswers()">Submit</button>
+            <button class="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function checkAnswers() {
+            const inputs = Array.from(document.querySelectorAll('input'));
+            const answers = inputs.map(input => input.value.toLowerCase().replace(/\s+/g, ''));
+            const correctAnswer = "correct"; // Replace with actual correct answer
+
+            if (answers.every(answer => answer === correctAnswer)) {
+                alert("That's right!");
+            } else {
+                alert("Try again!");
+            }
+        }
+    </script>
+
+</body>
+</html>
