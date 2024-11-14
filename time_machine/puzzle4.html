@@ -78,8 +78,8 @@
         <img src="./assets/time-machine.jpg" alt="Time machine">  <b><< Back to index</b>
     </div>
 
-    <h1>1300 AD - time machine maintenance habits</h1>
-    <p>The silent monks of Sparkford Castle seem keen to flag something up.</p>
+    <h1>1300 AD - An Illuminating Manuscript</h1>
+    <p>The silent monks of Sparkford Castle seem keen to flag something up, to improve our time machine maintenance habits.</p>
     
     <div class="video-container">
         <video controls height="100%">
@@ -118,8 +118,16 @@
     <p>When you get there, you can solve this:</p>
 
     <div class="content-section">
-        <p>TODO puzzle goes here</p>
-        <img src="your-image-file.jpg" alt="Sample Image" style="width:100%; height:auto;">
+        <p>In a manuscript the monk was busy illuminating, you find these notes:</p>
+        <ul>
+            <li>1 Sm 18:9</li>
+            <li>Jn 6:9</li>
+            <li>Lk 24:37</li>
+            <li>Ge 9:13</li>
+            <li>Ac 7:48</li>
+        </ul>
+        <p>There are also some letters etched into the castle wall:</p>
+        <img src="./assets/wall.png" alt="Wall" style="width:100%; height:auto;">
     </div>
 
 
@@ -132,7 +140,7 @@
     <script>
         function checkAnswer() {
             var userAnswer = document.getElementById('answer').value.toLowerCase().replace(/[^\w]/g, '');
-            if (userAnswer === 'todo') {
+            if (userAnswer === 'clock') {
                 alert('That is correct! Write it down somewhere, you\'ll need it to fix the time machine...');
             } else {
                 alert('Try again!');
