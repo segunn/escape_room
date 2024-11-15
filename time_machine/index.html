@@ -117,14 +117,11 @@
 
     <div class="modal" id="modal">
         <div class="modal-content">
-            <h2>Enter the Parts</h2>
+            <h2>Got all the parts?</h2>
+            <p>Put your parts into alphabetical order</p>
+            <p>Take the 8th letter of the 1st, 4th of the 2nd, 1st of the 3rd, 2nd of the 4th, 3rd of the 5th, 7th of the 6th and 1st of the 7th.</p>
+            <p>What happens to the time machine when you perform the repairs?</p>
             <input type="text" id="input1"><br>
-            <input type="text" id="input2"><br>
-            <input type="text" id="input3"><br>
-            <input type="text" id="input4"><br>
-            <input type="text" id="input5"><br>
-            <input type="text" id="input6"><br>
-            <input type="text" id="input7"><br>
             <button class="button" onclick="checkAnswers()">Submit</button>
             <button class="button" onclick="closeModal()">Close</button>
         </div>
@@ -142,11 +139,11 @@
 
         function checkAnswers() {
             const inputs = Array.from(document.querySelectorAll('input'));
-            const answers = inputs.map(input => input.value.toLowerCase().replace(/\s+/g, ''));
-            const correctAnswer = "correct"; // Replace with actual correct answer
+            const answers = inputs.map(input => input.value.toLowerCase().replace(/[^\w]/g, ''));
+            const correctAnswer = "ascends"; // Replace with actual correct answer
 
             if (answers.every(answer => answer === correctAnswer)) {
-                alert("That's right!");
+                alert("That's right! The time machine hovers happily 2 feet from the floor, and we know it's back in working order. You saved Sparkford - well done and thank you!");
             } else {
                 alert("Try again!");
             }
