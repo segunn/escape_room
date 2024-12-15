@@ -16,7 +16,8 @@ body {
 
 figure {
     margin: 0;
-    max-width: 800px;
+    /* TODO different logic for big vs small screens? */
+    max-width: 1000px;
 }
 
 img {
@@ -41,6 +42,16 @@ img {
     border: 1px solid #EA7317;
     color: #EA7317;
     opacity: 95%;
+}
+
+.image div.puzzlelink.solved {
+    background-color: #AFD5AA;
+    border: 1px solid #003844;
+    color: #003844;
+    font-size: 4vw;
+    border-radius: 10px;
+    padding: 0.5em;
+    opacity: 100%;
 }
 
 
@@ -146,4 +157,42 @@ div.topnav {
     text-decoration: none;
     font-size: 17px;
     border-right: 1px solid #AFD5AA;
+}
+
+
+/* BOOKS */
+
+.books div.media_card {
+    margin-bottom: 2px;
+    padding: 5px;
+    background-color: #AFD5AA;
+}
+
+.books .year {
+    font-weight: bolder;
+}
+
+.books .year .length {
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.books .anagram {
+    color: #3DA5D9;
+    text-align: center;
+    font-weight: bold;
+}
+
+.books .extraction {
+    text-align: right;
+    font-style: italic;
+}
+
+
+/* ANSWER CHECKER */
+
+.answer_checker {
+    text-align: center;
+    background-color: #EA7317;
+    padding: 5px;
 }

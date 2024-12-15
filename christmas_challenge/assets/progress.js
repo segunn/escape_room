@@ -17,3 +17,14 @@ function displayAccurateProgress() {
 
 
 document.addEventListener("DOMContentLoaded", displayAccurateProgress);
+
+function checkIfSolved() {
+    puzzle_keys.forEach((x,i) => {
+        const val = localStorage.getItem(x);
+        if (val === "solved"){
+            const links = document.getElementsByClassName(x)[0]
+            links.innerHTML = "✅"
+            links.classList.add("solved")
+        }
+    })
+}

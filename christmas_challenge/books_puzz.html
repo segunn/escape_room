@@ -13,6 +13,65 @@
             <a class="cta" href="books.html"> &#8592; to elf</a>
             <div class="progress"><span id="solve_count"></span>🪿</div>
         </div>
-        TODO puzzle goes here
+        <div class="books">   
+            <div class="media_card">
+                <div class="year">2003 film <span class="length">(3 4 2 3 5: 3 10 2 3 4)</span></div> 
+                <div class="anagram">SHORT FRIENDS WHO HELP FIGHT ON: GILT O LEFT HERE </div>
+                <div class="extraction"> last letter</div>
+            </div>
+            <div class="media_card">
+                <div class="year">1969 book <span class="length">(3 4 6 11)</span></div> 
+                <div class="anagram">CHEERY LARVA TRY LIGHT PRUNE</div>
+                <div class="extraction"> last letter</div>
+            </div>
+            <div class="media_card">
+                <div class="year">1950 book <span class="length">(3 4 3 5 3 3 8)</span></div> 
+                <div class="anagram">WINTER BEWITCHED. HERO: "HALT", AND HOT</div>
+                <div class="extraction"> last letter</div>
+            </div>
+            <div class="media_card">
+                <div class="year">1979 book <span class="length">(3 11 5 2 3 6)</span></div> 
+                <div class="anagram">SHOCK EARTH EXIT! THE GUY ALIGHT, HIDE</div>
+                <div class="extraction"> last letter</div>
+            </div>
+            <div class="media_card">
+                <div class="year">2004 film <span class="length">(7 8 2 3 8 4)</span></div> 
+                <div class="anagram">LOST FONDNESS UNTIL PM TRAIN, HE SEE SHE</div>
+                <div class="extraction"> last letter of first word</div>
+            </div>
+            <div class="media_card">
+                <div class="year">2019 film <span class="length">(8: 7)</span></div> 
+                <div class="anagram">GEMS AND A REVENGE</div>
+                <div class="extraction"> first letter</div>
+            </div>
+            <div class="media_card">
+                <div class="year">1966 film <span class="length">(3 3 6 5 9)</span></div> 
+                <div class="anagram">HE SCOWLS! TIGHT CON HEARS MIRTH</div>
+                <div class="extraction"> first letter of third word</div>
+            </div>
+            <div class="media_card">
+                <div class="year">1998 book <span class="length">(5 6 3 3 7 2 7)</span></div> 
+                <div class="anagram">SCAR BOY DOTH CHARM THERE AFTER SERPENT</div>
+                <div class="extraction"> last letter</div>
+            </div>
+            <div class="answer_checker">
+                <p>What did you find when tidying the books?</p>
+                <input type="text" id="answer" placeholder="Answer..."">
+                <button class="submit-button" onclick="checkAnswer()">Check</button>
+            </div>
+        </div>
+
+        <script>
+            function checkAnswer() {
+                var userAnswer = document.getElementById('answer').value.toLowerCase().replace(/[^\w]/g, '');
+                if (userAnswer === 'greylags') {
+                    alert('HONK! Well done, greylags are the anser anser! You found one of the geese!');
+                    localStorage.setItem("books", "solved");
+                    displayAccurateProgress()
+                } else {
+                    alert('Try again!');
+                }
+            }
+        </script>        
     </body>
-</html>
+</html> 
