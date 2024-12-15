@@ -1,0 +1,149 @@
+/* 
+Colour palette
+
+#003844 dark blue/green
+#006c67 teal
+#AFD5AA pale blue
+#3DA5D9 bright blue
+#EA7317 pumpkin
+
+*/
+
+body {
+    margin: 0;
+    background-color: #006c67;
+}
+
+figure {
+    margin: 0;
+    max-width: 800px;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+.image {
+    position: relative;
+}
+
+.image div.puzzlelink {
+    position: absolute;
+    background-color: #AFD5AA;
+    border: 1px solid #003844;
+    color: #003844;
+    font-size: 4vw;
+    border-radius: 10px;
+    padding: 0.5em;
+    opacity: 70%;
+}
+.image div.puzzlelink:hover {
+    border: 1px solid #EA7317;
+    color: #EA7317;
+    opacity: 95%;
+}
+
+
+.image div.globes{
+    top: 23%;
+    left: 48%;
+}
+.image div.socks{
+    top: 32%;
+    left: 82%;
+}
+.image div.stables{
+    top: 48%;
+    left: 10%;
+}
+.image div.toys{
+    top: 61%;
+    left: 33%;
+}
+.image div.bunks{
+    top: 62%;
+    left: 71%;
+}
+.image div.books{
+    top: 75%;
+    left: 70%;
+}
+
+
+
+.image div.puzz_intro {
+    position: absolute;
+    background-color: #AFD5AA;
+    border: 1px solid #003844;
+    color: #003844;
+    font-size: 2vw;
+    border-radius: 10px;
+    padding: 0.5em;
+    opacity: 95%;
+
+    top: 80%;
+    /* bottom: 3%; */
+    left: 10%;
+    right: 10%
+}
+
+.image div.map_intro {
+    position: absolute;
+    background-color: #AFD5AA;
+    border: 1px solid #003844;
+    color: #003844;
+    font-size: 2vw;
+    border-radius: 10px;
+    padding: 0.5em;
+    opacity: 95%;
+
+    /* top: 5%; */
+    bottom: 80%;
+    left: 10%;
+    right: 10%
+}
+
+
+
+/* NAVBAR */
+
+div.topnav {
+    background-color: #003844;
+    color: #AFD5AA;
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    color: #AFD5AA;
+    text-align: center;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-right: 1px solid #AFD5AA;
+  }
+  .topnav a:hover {
+    background-color: #AFD5AA;
+    color: #EA7317;
+  }
+  .topnav a.cta {
+    background-color: #EA7317;
+    color: #003844;
+    text-align: right;
+  }
+  .topnav a.cta:hover {
+    background-color: #AFD5AA;
+    color: #003844;
+    text-align: right;
+  }
+
+  /* Progress tracker */
+
+.topnav div.progress {
+    float: right;
+    color: #AFD5AA;
+    text-align: center;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-right: 1px solid #AFD5AA;
+}
