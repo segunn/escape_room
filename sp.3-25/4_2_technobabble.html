@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP.3-25 Taskforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🚀 <span id="missions_complete">0</span>/5 ⭐ <span id="stars_complete">0</span>/15
+        </div>
+    </div>
+    <div class="section">
+        <h1>The Tower of Technobabble</h1>
+        <p>
+            <em>
+                This colony's fondness for new tech has spiralled<br/>
+                All over beeps, bleeps and bloops are resounding<br/>
+                Now discarded sprockets are piling up skyward<br/>
+                Their limit <span class="w3w">basically.unearthly.bounding</span>.
+            </em>
+        </p>
+        <p>
+            Rebuild the tower, you'll find technobabble in each column.
+        </p>
+        <p>The spaces with stars spell out the key.</p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter keycode...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('nadir', '4', '2')">Submit</button>
+            <a class="button" href="index.html">Return to Base</a>
+        </div>
+    </div>
+</body>
+</html>
