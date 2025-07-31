@@ -15,8 +15,8 @@ function checkIfCompleted(mission, stage) {
 
 function updateStarsCount() {
     var completed_stages = 0;
-    for (let m = 0; m < totalMissions; m++) {
-        for (let s = 0; s < starsPerMission; s++) {
+    for (let m = 0; m <= totalMissions; m++) {
+        for (let s = 0; s <= starsPerMission; s++) {
             if (checkIfCompleted(mission=m, stage=s) === true) {
                 completed_stages++
             }
@@ -29,7 +29,7 @@ function updateMissionsCount() {
     var completed_mission = 0;
     for (let m = 0; m < totalMissions; m++) {
         var completed_stages = 0
-        for (let s = 0; s < starsPerMission; s++) {
+        for (let s = 0; s <= starsPerMission; s++) {
             if (checkIfCompleted(mission=m, stage=s) === true) {
                 completed_stages++
             }
