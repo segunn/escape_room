@@ -101,3 +101,16 @@ p {
     padding: 5px;
     border-color:  white;
 }
+
+#maintenance_buttons .r {
+    color: red
+}
+#maintenance_buttons .o {
+    color: orange
+}
+#maintenance_buttons .y {
+    color: yellow
+}
+#maintenance_buttons .w {
+    color: white
+}
