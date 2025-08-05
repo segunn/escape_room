@@ -33,7 +33,7 @@ p {
 
 .section {
     border: 2px solid  rgb(68, 175, 73);
-    height: calc(97vh - 72px);
+    min-height: calc(97vh - 72px);
     padding: 20px;
     margin: 15px;
     display: flex;
@@ -93,6 +93,7 @@ p {
 .mission_progress {
     text-align: center;
     color: white;
+    padding: 5px;
 }
 
 .mission_progress .button {

@@ -59,15 +59,22 @@ function storeCompletedMission(mission, stage) {
 
 function checkAnswer(correct_answer, mission, stage) {
     var answer_box = document.getElementById('answer');
-    var answer = answer_box.value
-
-    // TODO downcase , strip etc
+    var answer = answer_box.value.toLowerCase().replace(/[^\w]/g, '')
 
     if (answer == correct_answer) {
         storeCompletedMission(mission=mission, stage=stage)
-        // TODO display reset instructions and link to next puzzle
+        alert("You did it! Please leave this planet how you found it, and boldly go to the next phase.")
     } else {
-        alert("I'm sorry, Dave. I'm afraid I can't do that.")
+        const fail_messages = [
+            "I'm sorry, Dave. I'm afraid I can't do that. Please try again.",
+            "Houston, we have a problem. Please try again.",
+            "Those aren't the codes you're looking for. Please try again.",
+            "Try again - and this time, use the force. Please try again.",
+            "That's one small misstep for man, one giant L for mankind. Please try again.",
+        ]
+        const randomElement = fail_messages[Math.floor(Math.random() * fail_messages.length)];
+
+        alert(randomElement)
     }
     answer_box.value = null
 }
@@ -78,7 +85,13 @@ function checkAnswer(correct_answer, mission, stage) {
 function updateMissionStats() {
     updateStats()  // update the counts in the top bar
 
-    // TODO for each .mission_progress, check how many of the missions are done and update the icons
-
-        // TODO also change the link to go to the next incomplete stage
+    // Update the star icons
+    document.getElementById("section").querySelectorAll('span.status_icon').forEach(element => {
+        var parent_id = element.parentElement.id;
+        if ( checkIfCompleted(mission=parent_id[2], stage=parent_id[4]) === true) {
+            element.classList.add("fa-star")
+            element.classList.remove("fa-star-o")
+        }
+        
+      })
 }
