@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP.3-25 Taskforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🚀 <span id="missions_complete">0</span>/5 ⭐ <span id="stars_complete">0</span>/15
+        </div>
+    </div>
+    <div class="section">
+        <h1>Starship Rent-a-Prize</h1>
+        <p>
+            <em>
+                The Starship Rent-a-Prize is the galaxy's foremost arcade. Visitors come for a cosmic holiday, to relax and enjoy themselves aboard this <span class="w3w">purple.skyrocket.wide</span>.
+            </em>
+        </p>
+        <p>
+            Unfortunately, there are currently some <em>oddities</em> happening around the ship, and the management are hoping you can put things back in place and see what issues are highlighted.
+        </p>
+        <div>
+            <h3>GRAVITON PHASE CHAMBER</h3>
+            <p>When the astronauts stand in the right places, they appear simultaneously vertical and horizontally.</p>
+            <p><b>Crew:</b> Alana, Anita, Jamal, Lamar & Maxim</p>
+        </div>
+        <div>
+            <h3>CARGO REPLICATOR STATION</h3>
+            <p>Stack the cargo bay with one item per shelf. If they're in the correct positions, you'll end up with two copies of each.</p>
+            <p><b>Inventory</b>: a Wonderland visitor, a Celtic tribe, a long nosed herbivore, a revered historical artefact, a single image dot</p>
+        </div>
+        <div>
+            <h3>XR HOLOGRAPHY UNIT</h3>
+            <p>The scanners have gone awry, and all the images are being projected both vertically and horizontally.</p>
+            <p>Currently on screen: a massively useful item for hitchhikers, a human hinge joint, a greeting, storage for treasure or lungs, an inclined surface</p>
+        </div>
+        <p>Work out what the astronauts are trying to flag up, and you'll find the key.</p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter keycode...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('tech', '1', '3')">Submit</button>
+            <a class="button" href="index.html">Missions List</a>
+        </div>
+    </div>
+</body>
+</html>
