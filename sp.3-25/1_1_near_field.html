@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP.3-25 Taskforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🚀 <span id="missions_complete">0</span>/5 ⭐ <span id="stars_complete">0</span>/15
+        </div>
+    </div>
+    <div class="section">
+        <h1>Near Field Cowmunication</h1>
+        <p>
+            <em>
+                Ancient Earth legends tell of a cow that jumped over the moon. What they don't usually record is how far it went on to travel. <br/>
+                In fact, it landed on a planet near here, which is now populated entirely by cows. Now it's time for you to visit, and find out how our <span class="w3w">cattle.storyline.speeds</span>.
+            </em>
+        </p>
+        <p>
+            Find the cows and scan them with your telecommunications device. (You might need an android). The cows will give you clues about what order they should go in.
+        </p>
+        <p>The numbers when the cows are in order will spell out the (numerical!) key.</p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter keycode...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('261354', '1', '1')">Submit</button>
+            <a class="button" href="index.html">Missions List</a>
+        </div>
+    </div>
+</body>
+</html>

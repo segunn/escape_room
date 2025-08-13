@@ -1,0 +1,116 @@
+body {
+    background-color: black;
+    color: rgb(68, 175, 73);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+h1 {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+p {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.w3w {
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.status_bar {
+    height: 3vh;
+    background-color: darkslategrey;
+    text-align: right;
+    display: block;
+    padding: 2px;
+    padding-right: 5px;
+    color: white;
+}
+
+.status_bar .status {
+    padding-top: 5px;
+}
+
+.section {
+    border: 2px solid  rgb(68, 175, 73);
+    min-height: calc(97vh - 72px);
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.answer_box {
+    position: relative;
+    font-size: 16px;
+}
+
+.answer_box input {
+    width: 250px;
+    height: 32px;
+    padding: 10px;
+    background-color: black;
+    color:  rgb(68, 175, 73);
+    font-family: 'Courier New', Courier, monospace;
+    caret-color: rgb(68, 175, 73);
+    border: none;    
+    text-indent: 32px;
+}
+
+.answer_box .fa-terminal { 
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.actions {
+    padding-top: 15px;
+}
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    color:  rgb(68, 175, 73);;
+    border: 1px solid;
+    border-color:  rgb(68, 175, 73);
+    background-color: black;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: rgb(28, 73, 30);;
+}
+
+
+.mission {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.mission_progress {
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+
+.mission_progress .button {
+    color: white;
+    padding: 5px;
+    border-color:  white;
+}
+
+#maintenance_buttons .r {
+    color: red
+}
+#maintenance_buttons .o {
+    color: orange
+}
+#maintenance_buttons .y {
+    color: yellow
+}
+#maintenance_buttons .w {
+    color: white
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP.3-25 Taskforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🚀 <span id="missions_complete">0</span>/5 ⭐ <span id="stars_complete">0</span>/15
+        </div>
+    </div>
+    <div class="section">
+        <h1>Territorialien</h1>
+        <p>
+            <em>
+                Earth has been asked to act as mediators to help resolve a local territory dispute - and we're sending you! <br>
+                If you can find each alien a space they're happy to stand in, we'll be able to disperse the <span class="w3w">gathering.alien.lawyer</span>. 
+            </em>
+        </p>
+        <p>
+            The rules are...
+        </p>
+        <ul>
+            <li>No two aliens can stand on the same square</li>
+            <li>No two aliens can be able to see each other</li>
+            <li>Each alien watches all the squares they can see</li>
+            <li>Every square without a tower must be watched by at least one alien</li>
+            <li>Aliens can see in straight lines to their north, south, east and west.</li>
+            <li>Aliens cannot see diagonally</li>
+            <li>Aliens cannot see through towers</li>
+            <li>If a tower has a number on it, that is how many aliens in total must be placed in the squares to the north, south, east and west.</li>
+        </ul>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter keycode...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('truce', '5', '3')">Submit</button>
+            <a class="button" href="index.html">Missions List</a>
+        </div>
+    </div>
+</body>
+</html>

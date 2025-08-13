@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP.3-25 Taskforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🚀 <span id="missions_complete">0</span>/5 ⭐ <span id="stars_complete">0</span>/15
+        </div>
+    </div>
+    <div class="section">
+        <h1>Maintenance Bay</h1>
+        <p>
+            <em>
+                Your usually helpful droid assistant is malfunctioning, and seems almost grumpy about something.
+                Despite its lack of legs, it's managing an <span class="w3w">irritated.stamp.about</span>. 
+                You start to feel some re<b>morse</b> for making it do all the boring jobs.
+            </em>
+        </p>
+        <p>
+            Visit the maintenance bay, place your robot on the dock, and see if you can get to the long and short of what it's so upset about.
+        </p>
+        <p><em>Note: Once the message starts, take the robot off the maintenance platform.</em></p>
+        <p>If you can answer that question, you'll find the key.</p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter keycode...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('wasps', '5', '1')">Submit</button>
+            <a class="button" href="index.html">Missions List</a>
+        </div>
+    </div>
+</body>
+</html>
