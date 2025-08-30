@@ -43,7 +43,7 @@ function updateMissionsCount() {
 
 function updateStats() {
     updateStarsCount()
-    updateMissionsCount()
+    // updateMissionsCount()
 }
 
 function storeCompletedMission(mission, stage) {
