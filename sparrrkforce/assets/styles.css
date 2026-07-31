@@ -1,0 +1,105 @@
+body {
+    background-color: black;
+    color: #DDDBCB;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: Georgia, Times, "Times New Roman", serif; 
+    margin: 0;
+}
+h1 {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color:  #1B9AAA;
+}
+p {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.w3w {
+    font-weight: bold;
+    color: #1B9AAA;
+}
+
+.status_bar {
+    height: 3vh;
+    background-color: #E3170A;
+    text-align: right;
+    display: block;
+    padding: 2px;
+    padding-right: 5px;
+    color: #DDDBCB;
+}
+
+.status_bar .status {
+    padding-top: 5px;
+}
+
+.section {
+    border: 2px solid #1B9AAA;
+    min-height: calc(97vh - 72px);
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.answer_box {
+    position: relative;
+    font-size: 16px;
+}
+
+.answer_box input {
+    width: 250px;
+    height: 32px;
+    padding: 10px;
+    background-color: black;
+    color:  #1B9AAA;
+    font-family: 'Courier New', Courier, monospace;
+    caret-color: #1B9AAA;
+    border: none;    
+    text-indent: 32px;
+}
+
+.answer_box .fa-terminal { 
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.actions {
+    padding-top: 15px;
+}
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    color:  #1B9AAA;;
+    border: 1px solid;
+    border-color:  #1B9AAA;
+    background-color: black;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #994636;
+}
+
+
+.mission {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.mission_progress {
+    text-align: center;
+    color: #DDDBCB;
+    padding: 5px;
+}
+
+.mission_progress .button {
+    color: #DDDBCB;
+    padding: 5px;
+    border-color:  #DDDBCB;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparrrkforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🏴‍☠️ <span id="stars_complete">0</span>/12
+        </div>
+    </div>
+    <div class="section">
+        <h1>Seven Pirate Captains</h1>
+        <p>
+            <em>
+                Seven pirate captains<br/>
+                A-sailing the seven ASCIIs<br/>
+                Each one filled his cabin<br/>
+                With all that he thought he would need<br/>
+                The space aboard was scarce<br/>
+                It fit at best <span class="w3w">one</span> of each thing<br/>
+                With <span class="w3w">zero</span> room for spares<br/>
+                He chose his essentials to bring.<br/>
+                Eyepatch? His sword? Cravat?<br/>
+                His pet, his fish, his hat, his flag?<br/>
+                He's ready to have at<br/>
+                Each vessel with treasure to snag<br/>
+            </em>
+        </p>
+        <p>
+            Find the Seven Captains and check what they took to spell out the answer.
+        </p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter answer...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('cutlass', '1', '2')">Submit</button>
+            <a class="button" href="index.html">Quests List</a>
+        </div>
+    </div>
+</body>
+</html>
