@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparrrkforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🏴‍☠️ <span id="stars_complete">0</span>/12
+        </div>
+    </div>
+    <div class="section">
+        <h1>Grand Day Signs</h1>
+        <p>
+            <em>
+                The ship is very important to the pirate's <span class="w3w">day</span>-to-day, it <span class="w3w">shapes</span> his every move. From the crow's nest at the top of the mast, the lookout can see what other ships are signalling.
+            </em>
+            <em>
+                Pirates are notoriously rebellious, so they don't always use their sign<span class="w3w">A1</span>s in the prescribed manner.
+            </em>
+        </p>
+        <p>
+            Find the mast and decode the signals hanging from it.
+        </p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter answer...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('beach', '3', '1')">Submit</button>
+            <a class="button" href="index.html">Quests List</a>
+        </div>
+    </div>
+</body>
+</html>

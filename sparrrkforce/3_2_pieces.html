@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparrrkforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🏴‍☠️ <span id="stars_complete">0</span>/12
+        </div>
+    </div>
+    <div class="section">
+        <h1>Pieces of Eight</h1>
+        <div class="imgbox">
+            <img class="center-fit" src='./assets/eight.png'>
+        </div>
+        <p>
+            <em>
+                According to legend, when the eight pieces are correctly arranged, the arrows will include a direction, a food and two sounds.
+            </em>
+        </p>
+        <p>
+            Arrange the eight pieces so each arrow is a four-letter word, then the eight letter answer will become visible.
+        </p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter answer...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('symphony', '3', '2')">Submit</button>
+            <a class="button" href="index.html">Quests List</a>
+        </div>
+    </div>
+</body>
+</html>

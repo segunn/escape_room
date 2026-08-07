@@ -63,15 +63,13 @@ function checkAnswer(correct_answer, mission, stage) {
 
     if (answer == correct_answer) {
         storeCompletedMission(mission=mission, stage=stage)
-        alert("You did it! Please leave everything shipshape, and set sail for your next quest.")
+        alert("Ye did it! Please leave everything shipshape, and set sail for your next quest.")
     } else {
         const fail_messages = [
-            "That guess was so cold, me timbers are shivering"
-            // "I'm sorry, Dave. I'm afraid I can't do that. Please try again.",
-            // "Houston, we have a problem. Please try again.",
-            // "Those aren't the codes you're looking for. Please try again.",
-            // "Try again - and this time, use the force. Please try again.",
-            // "That's one small misstep for man, one giant L for mankind. Please try again.",
+            "That guess was so cold, me timbers are shivering",
+            "Ye'll never find treasure like that, landlubber",
+            "Avast, it's a wrong answer!",
+            "That's no booty. Better scrub the decks and try again",
         ]
         const randomElement = fail_messages[Math.floor(Math.random() * fail_messages.length)];
 
