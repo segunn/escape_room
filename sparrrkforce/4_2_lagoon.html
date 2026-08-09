@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparrrkforce</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/progress.js"></script>
+</head>
+<body onload="updateStats()">
+    <div class="status_bar">
+       <div class="status">
+        🏴‍☠️ <span id="stars_complete">0</span>/12
+        </div>
+    </div>
+    <div class="section">
+        <h1>You are in a lagoon</h1>
+        <p>
+            <em>
+                You sense treasure somewhere nearby. You just need to find it. 
+            </em>
+            <em>
+                Steer the ship by turning the dial. Press the dial inwards to move one step in that direction. 
+            </em>
+        </p>
+        <p>
+            Find your ship, chart the lagoon, and locate the treasure.
+        </p>
+        <div class="answer_box">
+            <span class="fa fa-solid fa-lg fa-terminal"></span>
+            <input id="answer" type="text" class="input-field" placeholder="Enter answer...">
+        </div>
+        <div class="actions">
+            <a class="button" id="submit" onclick="checkAnswer('bananas', '4', '2')">Submit</button>
+            <a class="button" href="index.html">Quests List</a>
+        </div>
+    </div>
+</body>
+</html>
